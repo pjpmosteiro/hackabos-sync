@@ -6,6 +6,10 @@ class Banco {
     this.subscriptores = [];
     this.cuentaBase = null;
   }
+  //Publicidad
+  lanzarpublicidad() {
+    let a = null;
+  }
 
   CrearCuenta(cliente) {
     const nuevaCuenta = this.GenerarCuenta(cliente);
@@ -18,6 +22,19 @@ class Banco {
     const nuevoCliente = new Cliente(nombreCliente);
     this.AnadirCliente(nuevoCliente);
     return nuevoCliente;
+  }
+
+  suscribirse(cliente) {
+    this.subscriptores.push(cliente);
+    console.log("Suscr aceptada");
+  }
+
+  desuscribirse(cliente) {
+    this.subscriptores = this.subscriptores.filter(item => {
+      if (item == cliente) {
+        return item;
+      }
+    });
   }
 
   AnadirCliente(cliente) {
@@ -82,3 +99,9 @@ cuentaFicticia2.Comision = 2;
 banco.EstablecerCondiciones(cuentaFicticia2);
 
 const cuenta3 = banco.CrearCuenta(cliente2);
+
+let altas1 = banco.suscribirse("pepebombo");
+console.log(banco.subscriptores);
+
+let bajas1 = banco.desuscribirse("pepebombo");
+console.log(banco.subscriptores);
