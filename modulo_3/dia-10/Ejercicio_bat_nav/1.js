@@ -1,23 +1,52 @@
-//Batalla estelar
+//Batalla estelar --BIDIMENSIONAL
 //LANG=es_ES codif utf-8
 class Nave {
-  constructor(nombre, dano, pvida, estado) {
+  constructor(nombre, pdisparo, pvida, dano, estado) {
     this.nombre = nombre;
-    this.dano = dano;
+    this.pdisparo = pdisparo;
     this.pvida = pvida;
-    this.estado = estado;
+    this.dano = dano;
+    this.estado = [];
+    //estado - funcion get en funcion de vida. If vida = 0,estado = muerto
+  }
+  Obtenerdano(nave) {
+    if ((this.pvida = 0)) {
+      return "muerto";
+    } else {
+      return "vivo";
+    }
+  }
+  Recibirdisparo(dano) {
+    this.pvida.push(-i);
   }
 }
+
+let disparar = {
+  //obtener posicion
+  //Ejecutar funcion "recibir disparo"
+};
+let selecttarget = {
+  //Fijar en cordeenadas desde disparar
+};
+
+//restar 1 a puntovida del objeto nave
+
 class NaveTipo1 extends Nave {
-  constructor() {}
+  constructor(nombre, pdisparo, pvida) {
+    super(nombre, "10", "5");
+  }
 }
 
 class NaveTipo2 extends Nave {
-  constructor() {}
+  constructor(nombre, pvida, pdisparo) {
+    super(nombre, "5", "10");
+  }
 }
 
 class NaveTipo3 extends Nave {
-  constructor() {}
+  constructor(nombre, pvida, pdisparo) {
+    super(nombre, "8", "7");
+  }
 }
 
 class Ejercito {
@@ -30,7 +59,23 @@ class Ejercito {
 }
 class NaveGenerator {
   constructor() {}
+  CrearEjercito(nombre, nave1, nave2, nave3) {
+    let ejercito = new Ejercito(nombre);
+    for (let i = 0; i < nave1; i++) {
+      let nave1 = new NaveTipo1("nave1");
+      ejercito.listanaves.push(nave);
+    }
+    for (let i = 0; i < nave2; i++) {
+      let nave2 = new NaveTipo2("nave2");
+      ejercito.listanaves.push(nave);
+    }
+    for (let i = 0; i < nave3; i++) {
+      let nave3 = new NaveTipo3("nave3");
+      ejercito.listanaves.push(nave);
+    }
+  }
 }
+
 class CampoBatalla {
   constructor(sectorlist, rolecontrol, roleexec) {
     this.sectorlist = [];
@@ -42,6 +87,7 @@ class Sector {
   constructor() {}
 }
 
+let Ejercito1 = NaveGenerator.CrearEjercito();
 //OPERATIVA
 /*
 const ejercito1 = generador.CrearEjercito("Rojo", 3, 5, 7);
