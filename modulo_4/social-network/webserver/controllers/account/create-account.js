@@ -4,7 +4,7 @@ const Joi = require('joi');
 
 async function validateSchema(payload) {
   /**
-   * TODO: Fill email, password and full name rules to be (all fields are mandatory):
+   * TO DO: Fill email, password and full name rules to be (all fields are mandatory):
    *  email: Valid email
    *  password: Letters (upper and lower case) and number
    *    Minimun 3 and max 30 characters, using next regular expression: /^[a-zA-Z0-9]{3,30}$/
@@ -20,7 +20,9 @@ async function validateSchema(payload) {
 }
 
 async function create(req, res, next) {
-  const accountData = { ...req.body };
+  const accountData = {
+    ...req.body,
+  };
 
   /**
    * Validate if user data is valid to create an account
@@ -40,17 +42,20 @@ async function create(req, res, next) {
 
   try {
     /**
-     * TODO: Insert user into MySQL
+     * TO DO: Insert user into MySQL
      *  hash the password using bcrypt library
      */
-    const securePassword = 'TODO' /* USE BCRYPT TO CIPHER THE PASSWORD */;
+    const securePassword = 'TODO';
 
     /**
-     * TODO: Insert user into mysql and get the user uuid
+     * TO DO: Insert user into mysql and get the user uuid
      */
+    const uuid = require('uuid/v4');
+    uuid();
+    console.log(uuidv4);
 
     /**
-     * TODO: CREATE VERIFICATION CODE AND INSERT IT INTO MySQL
+     * TO DO: CREATE VERIFICATION CODE AND INSERT IT INTO MySQL
      */
     const verificationCode = 'TODO: use uuid library to generate a uuid version 4';
 
