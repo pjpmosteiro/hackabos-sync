@@ -12,12 +12,11 @@ const sgMail = require('@sendgrid/mail');
 let connection = null;
 (async () => {
   connection = await mysql.createConnection({
-    host: '192.168.0.125',
-    user: 'hackabos',
+    host: 'localhost',
+    user: 'root',
     database: 'socialnetwork',
-    password: 'Mosteiro1',
+    password: '947710',
   });
-  console.log('Con ok')
 })();
 /*
 //simple query
@@ -32,6 +31,8 @@ connection.query(
 */
 
 async function validateSchema(payload) {
+
+
   /**
     * TO DO: Fill email, password and full name rules to be(all fields are mandatory):
       *
@@ -43,7 +44,7 @@ async function validateSchema(payload) {
       */
   const schema = {
     email: Joi.string().email({
-      minDomainAtoms: 2,
+      minDomainAtoms: 2
     }).required(),
     password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
     // email: rules.email,
@@ -53,7 +54,28 @@ async function validateSchema(payload) {
 
   return Joi.validate(payload, schema);
 }
+// send mail
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+async function sendEmailRegistration(userEmail, verificationCode) {
+  const msg = {
+    to: userEmail,
+    from: {
+      email: "publico@pablojprieto.com.es",
+      name: "Social Network :)"
+    },
+    subject: "Welcome to Hack a Bos Social Network",
+    text: "Start meeting people of your interests",
+    html: `To confirm the account <a href="${
+      process.env.HTTP_SERVER_DOMAIN
+    }/api/account/activate?verification_code=${verificationCode}">activate it here</a>`
+  };
+  console.log("mail ok");
+  const data = await sgMail.send(msg);
+  return data;
+}
 
+
+////
 async function create(req, res, next) {
   const accountData = {
     ...req.body,
@@ -86,18 +108,20 @@ async function create(req, res, next) {
     const uuid = uuidV4();
     const now = new Date();
     const createdAt = now.toISOString().substring(0, 19).replace('T', ' ');
-    // Usar bcrypt!!!z
+    //Usar bcrypt!!!z
 
     /**
      * TO DO: Insert user into mysql and get the user uuid
      */
+
     try {
       connection.query('INSERT INTO users SET ?', {
         uuid,
         email,
         password,
         created_at: createdAt,
-      })
+      });
+
     } catch (e) {
       console.error(e);
       return res.status(409).send(e.message);
@@ -109,14 +133,14 @@ async function create(req, res, next) {
     const verificationCode = uuidV4();
 
     //
-    // Insert verificationCode into mysql
+    //Insert verificationCode into mysql
     try {
       connection.query('INSERT INTO users_activation SET ?', {
         user_uuid: uuid,
         verification_code: verificationCode,
         created_at: createdAt,
       });
-      console.log('Insert ok');
+
     } catch (e) {
       console.error(e);
       return res.status(409).send(e.message);
@@ -129,27 +153,20 @@ async function create(req, res, next) {
 
     // send email
     try {
-      /**
+      /**
        * ->Send email to the user adding the verificationCode in the link
        */
-      //ABRIR VPN AL SERVIDOR DE CASA!!!!!
-      sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-      const msg = {
-        to: 'publico@pablojprieto.com.es',
-        from: 'no-reply@pablojprieto.com.es',
-        subject: 'Email Test Social Network',
-        text: 'Mu bieeen, ya sabes mandar correos, einstein....',
-      };
-      sgMail.send(msg);
-      console.log('mail ok');
+      const verificationCode = await /*addVerificationCode(uuid)*/ uuidV4();
+      await sendEmailRegistration(email, verificationCode);
+      console.log("Mail ok");
+
     } catch (e) {
-      console.error('Sengrid error', se);
+      console.error('Sengrid error', e);
     }
   } catch (e) {
     // create error
     next(e);
   }
 }
-console.log('Arranque ok');
+console.log("Arranque ok");
 module.exports = create;
-return;
