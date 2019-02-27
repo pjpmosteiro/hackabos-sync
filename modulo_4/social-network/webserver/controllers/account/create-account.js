@@ -131,6 +131,7 @@ async function create(req, res, next) {
       /**
        * ->Send email to the user adding the verificationCode in the link
        */
+      //ABRIR VPN AL SERVIDOR DE CASA!!!!!
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
         to: 'publico@pablojprieto.com.es',
