@@ -17,6 +17,7 @@ let connection = null;
     database: 'socialnetwork',
     password: 'Mosteiro1',
   });
+  console.log('Con ok')
 })();
 /*
 //simple query
