@@ -14,7 +14,7 @@ const httpServerConfig = require('./config/http-server-config');
     // await mysqlPool.connect();
     // await mongoPool.connect();
     await webServer.listen(httpServerConfig.port);
-    console.log(`server running at: ${httpServerConfig.port}`);
+    console.log(`Escuchando en: ${httpServerConfig.port}`);
   } catch (e) {
     await webServer.close();
     console.error(e);
