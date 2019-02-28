@@ -54,6 +54,9 @@ async function validateSchema(payload) {
 
   return Joi.validate(payload, schema);
 }
+
+
+
 // send mail
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 async function sendEmailRegistration(userEmail, verificationCode) {
@@ -69,7 +72,7 @@ async function sendEmailRegistration(userEmail, verificationCode) {
       process.env.HTTP_SERVER_DOMAIN
     }/api/account/activate?verification_code=${verificationCode}">activate it here</a>`
   };
-  console.log("mail ok");
+  console.log("Envio Mail ok");
   const data = await sgMail.send(msg);
   return data;
 }
@@ -123,6 +126,7 @@ async function create(req, res, next) {
       });
 
     } catch (e) {
+      console.log('ERROR MYSQL');
       console.error(e);
       return res.status(409).send(e.message);
     }
@@ -158,7 +162,7 @@ async function create(req, res, next) {
        */
       const verificationCode = await /*addVerificationCode(uuid)*/ uuidV4();
       await sendEmailRegistration(email, verificationCode);
-      console.log("Mail ok");
+      console.log("Conexión Mail ok");
 
     } catch (e) {
       console.error('Sengrid error', e);
