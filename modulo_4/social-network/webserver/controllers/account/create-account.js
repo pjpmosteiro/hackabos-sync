@@ -5,6 +5,8 @@ const uuidV4 = require('uuid/v4');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql2/promise');
 const sgMail = require('@sendgrid/mail');
+const mysqlPool = require('../../../databases/mysql-pool');
+
 /**
  * TODO: Refactorizar
  */

@@ -2,10 +2,11 @@
 
 const express = require('express');
 const createAccount = require('../controllers/account/create-account');
-const activateAccount = require('')
+const activateAccount = require('../controllers/account/activate-account');
 
 const accountRouter = express.Router();
 
 accountRouter.post('/account', createAccount);
-accountRouter.get('/account/activate');
+accountRouter.get('/account/activate', activateAccount);
+
 module.exports = accountRouter;
