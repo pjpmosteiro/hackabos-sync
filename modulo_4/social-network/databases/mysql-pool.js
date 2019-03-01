@@ -26,13 +26,13 @@ async function connect() {
     const connection = await this.pool.getConnection();
     if (connection) {
       connection.release();
+      console.log('Conectado a MySQL');
     }
   } catch (e) {
     console.error('mysql pool connect', e);
     throw e;
   }
 }
-
 async function getConnection() {
   if (this.pool === null) {
     throw new Error("MySQL connection didn't established. You must connect first.");
@@ -42,8 +42,8 @@ async function getConnection() {
 
   return connection;
 }
-
 module.exports = {
   connect,
   getConnection,
 };
+debugger;
