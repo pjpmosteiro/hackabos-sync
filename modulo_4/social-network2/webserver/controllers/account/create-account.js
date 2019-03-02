@@ -5,6 +5,7 @@ const Joi = require('joi');
 const sendgridMail = require('@sendgrid/mail');
 const uuidV4 = require('uuid/v4');
 const mysqlPool = require('../../../databases/mysql-pool');
+const UserModel = require('../../../models/user-model');
 
 sendgridMail.setApiKey(process.env.SENGRID_API_KEY);
 
@@ -58,6 +59,30 @@ async function addVerificationCode(uuid) {
   return verificationCode;
 }
 
+async function createUserProfile(uuid) {
+  const userProfileData = {
+    uuid,
+    avatarUrl: null,
+    fullName: null,
+    preferences: {
+      isPublicProfile: false,
+      linkedIn: null,
+      twitter: null,
+      github: null,
+      description: null,
+    },
+  };
+
+  try {
+    const userCreated = await UserModel.create(userProfileData);
+
+    console.log(userCreated);
+  } catch (e) {
+    console.error(e);
+  }
+  
+}
+
 /**
  * Send an email with a verification link to the user to activate the account
  * @param {String} userEmail
@@ -68,8 +93,8 @@ async function sendEmailRegistration(userEmail, verificationCode) {
   const msg = {
     to: userEmail,
     from: {
-      email: 'publico@pablojprieto.com.es',
-      name: 'Social Network :) --NOSPAM//03',
+      email: 'socialnetwork@yopmail.com',
+      name: 'Social Network :)',
     },
     subject: 'Welcome to Hack a Bos Social Network',
     text: 'Start meeting people of your interests',
@@ -90,9 +115,7 @@ async function validateSchema(payload) {
    * fullName: String with 3 minimun characters and max 128
    */
   const schema = {
-    email: Joi.string().email({
-      minDomainAtoms: 2
-    }).required(),
+    email: Joi.string().email({ minDomainAtoms: 2 }).required(),
     password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
     // fullName: rules.fullName,
   };
@@ -101,9 +124,7 @@ async function validateSchema(payload) {
 }
 
 async function create(req, res, next) {
-  const accountData = {
-    ...req.body
-  };
+  const accountData = { ...req.body };
 
   /**
    * Validate if user data is valid to create an account
@@ -127,6 +148,11 @@ async function create(req, res, next) {
      */
     const uuid = await insertUserIntoDatabase(email, password);
     res.status(204).json();
+
+    /**
+     * We are going to creaate minimum structure in mongodb
+     */
+    await createUserProfile(uuid);
 
     /**
      * Generate verification code and send email
