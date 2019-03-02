@@ -6,10 +6,35 @@ const bcrypt = require('bcrypt');
 const mysql = require('mysql2/promise');
 const sgMail = require('@sendgrid/mail');
 const mysqlPool = require('../../../databases/mysql-pool');
+const UserModel = require('../../../models/user-model');
 
-/**
- * TODO: Refactorizar
- */
+
+// MONGO
+
+async function createUserProfile(uuid) {
+  const userProfileData = {
+    uuid,
+    avatarUrl: null,
+    fullName: null,
+    preferences: {
+      isPublicProfile: false,
+      linkedIn: null,
+      twitter: null,
+      github: null,
+      description: null,
+    },
+  };
+
+  try {
+    const userCreated = await UserModel.create(userProfileData);
+
+    console.log(userCreated);
+  } catch (e) {
+    console.error(e);
+  }
+}
+
+// SQL
 // create the connection to database
 let connection = null;
 (async () => {
@@ -33,8 +58,6 @@ connection.query(
 */
 
 async function validateSchema(payload) {
-
-
   /**
     * TO DO: Fill email, password and full name rules to be(all fields are mandatory):
       *
@@ -46,17 +69,14 @@ async function validateSchema(payload) {
       */
   const schema = {
     email: Joi.string().email({
-      minDomainAtoms: 2
+      minDomainAtoms: 2,
     }).required(),
     password: Joi.string().regex(/^[a-zA-Z0-9]{3,30}$/).required(),
-    // email: rules.email,
-    // password: rules.password,
-    // fullName: rules.fullName,
+
   };
 
   return Joi.validate(payload, schema);
 }
-
 
 
 // send mail
@@ -65,22 +85,22 @@ async function sendEmailRegistration(userEmail, verificationCode) {
   const msg = {
     to: userEmail,
     from: {
-      email: "publico@pablojprieto.com.es",
-      name: "Social Network :)"
+      email: 'publico@pablojprieto.com.es',
+      name: 'Social Network :)',
     },
-    subject: "Welcome to Hack a Bos Social Network",
-    text: "Start meeting people of your interests",
+    subject: 'Welcome to Hack a Bos Social Network',
+    text: 'Start meeting people of your interests',
     html: `To confirm the account <a href="${
       process.env.HTTP_SERVER_DOMAIN
-    }/api/account/activate?verification_code=${verificationCode}">activate it here</a>`
+    }/api/account/activate?verification_code=${verificationCode}">activate it here</a>`,
   };
-  console.log("Envio Mail ok");
+  console.log('Envio Mail ok');
   const data = await sgMail.send(msg);
   return data;
 }
 
 
-////
+// //
 async function create(req, res, next) {
   const accountData = {
     ...req.body,
@@ -113,7 +133,7 @@ async function create(req, res, next) {
     const uuid = uuidV4();
     const now = new Date();
     const createdAt = now.toISOString().substring(0, 19).replace('T', ' ');
-    //Usar bcrypt!!!z
+    // Usar bcrypt!!!z
 
     /**
      * TO DO: Insert user into mysql and get the user uuid
@@ -126,7 +146,6 @@ async function create(req, res, next) {
         password,
         created_at: createdAt,
       });
-
     } catch (e) {
       console.log('ERROR MYSQL');
       console.error(e);
@@ -139,14 +158,13 @@ async function create(req, res, next) {
     const verificationCode = uuidV4();
 
     //
-    //Insert verificationCode into mysql
+    // Insert verificationCode into mysql
     try {
       connection.query('INSERT INTO users_activation SET ?', {
         user_uuid: uuid,
         verification_code: verificationCode,
         created_at: createdAt,
       });
-
     } catch (e) {
       console.error(e);
       return res.status(409).send(e.message);
@@ -157,15 +175,19 @@ async function create(req, res, next) {
      */
     res.status(204).json();
 
+    /**
+     * We are going to creaate minimum structure in mongodb
+     */
+    await createUserProfile(uuid);
+
     // send email
     try {
       /**
        * ->Send email to the user adding the verificationCode in the link
        */
-      const verificationCode = await /*addVerificationCode(uuid)*/ uuidV4();
+      const verificationCode = await /* addVerificationCode(uuid) */ uuidV4();
       await sendEmailRegistration(email, verificationCode);
-      console.log("Conexión Mail ok");
-
+      console.log('Conexión Mail ok');
     } catch (e) {
       console.error('Sengrid error', e);
     }
@@ -174,5 +196,5 @@ async function create(req, res, next) {
     next(e);
   }
 }
-console.log("Arranque ok");
+console.log('Arranque ok');
 module.exports = create;
