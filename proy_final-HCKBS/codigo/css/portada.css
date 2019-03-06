@@ -1,4 +1,5 @@
 @import "generic.css";
-/*html {
-/*  background-image: url('/img/transportes-ii.jpg');
-/*}
+html {
+  background: url('/img/transportes-ii.jpg') no-repeat center center fixed;
+background-size: cover;
+}
