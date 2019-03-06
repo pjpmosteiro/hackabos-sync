@@ -64,6 +64,7 @@ async function createUserProfile(uuid) {
     uuid,
     avatarUrl: null,
     fullName: null,
+    friends: [],
     preferences: {
       isPublicProfile: false,
       linkedIn: null,
@@ -80,7 +81,6 @@ async function createUserProfile(uuid) {
   } catch (e) {
     console.error(e);
   }
-  
 }
 
 /**

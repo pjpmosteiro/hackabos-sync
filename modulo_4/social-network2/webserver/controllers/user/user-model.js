@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const {
+  Schema
+} = mongoose;
 
 const userSchema = new Schema({
   uuid: {
@@ -21,6 +23,7 @@ const userSchema = new Schema({
   },
 });
 
+// var Tank = mongoose.model('Tank', schema);
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

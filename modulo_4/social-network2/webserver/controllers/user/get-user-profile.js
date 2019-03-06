@@ -1,23 +1,15 @@
 'use strict';
-const mongoose = require('mongoose');
-const User = require('../../../models/user-model.js')
+
+const UserModel = require('../../../models/user-model');
+
 async function getUserProfile(req, res, next) {
+  const { uuid } = req.claims;
 
-  try {
-    const userDataProfileMongose = dot.dot(userDataProfile);
-    const data = await UserModel.findOne({
-      uuid: claims.uuid
-    }, userDataProfileMongoose);
-    console.log('mongose data', data);
-    return res.status(204).send();
-  } catch (err) {
-    return res.status(500).send(err.message);
-  }
+  const userProfile = await UserModel.findOne({ uuid });
 
-  return res.send(req.claims);
+  console.log('user profile', userProfile);
+
+  return res.status(200).send(userProfile);
 }
-
-
-
 
 module.exports = getUserProfile;
