@@ -1,5 +1,4 @@
 'use strict';
-//crear post-model.js para upload de post
 
 const mongoose = require('mongoose');
 
@@ -11,22 +10,23 @@ const postSchema = new Schema({
   owner: String,
   author: String,
   content: String,
-  createdAt: Date,
-  comments: [{
-    author: String,
-    comment: String,
-    created_at: Date,
-    deleted_at: Date,
-  }],
   likes: [String],
+  comments: [{
+    message: String,
+    createdAt: Date,
+    author: String,
+  }],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
   deletedAt: Date,
-
 });
 
-
-const User = mongoose.model('Post', postSchema);
+const Post = mongoose.model('Post', postSchema);
 
 module.exports = Post;
+
 //crear post-model.js para upload de post
 //campos:
 //Autor

@@ -1,4 +1,4 @@
-'use strict '
+'use strict';
 
 const cloudinary = require('cloudinary');
 const UserModel = require('../../../models/user-model');
@@ -14,17 +14,13 @@ cloudinary.config({
 });
 
 async function uploadAvatar(req, res, next) {
-  const {
-    uuid
-  } = req.claims;
-  const {
-    file
-  } = req;
+  const { uuid } = req.claims;
+  const { file } = req;
 
   if (!file.buffer) {
     return res.status(400).send();
   }
-
+  
   // necesito la imagen que suben desde postman/ browser / whatever
 
   // subir foto a cloudinary
@@ -35,7 +31,7 @@ async function uploadAvatar(req, res, next) {
     height: 200,
     format: 'jpg',
     crop: 'limit',
-  }, async (err, result) => {
+  }, async(err, result) => {
     if (err) {
       console.error('hubo error', err);
       return res.status(400).send(err);
@@ -52,9 +48,7 @@ async function uploadAvatar(req, res, next) {
     };
 
     try {
-      await UserModel.updateOne({
-        uuid
-      }, updateUserProfile);
+      await UserModel.updateOne({ uuid }, updateUserProfile);
 
       // devolve el 204 y el header location con la url de la foto
       res.header('Location', secureUrl);
