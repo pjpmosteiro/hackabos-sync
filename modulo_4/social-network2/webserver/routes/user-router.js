@@ -10,6 +10,7 @@ const uploadAvatar = require('../controllers/user/upload-avatar');
 const searchUsers = require('../controllers/user/search-user');
 
 const addFriendRequest = require('../controllers/user/add-friend-request');
+// const acceptFriendRequest = require ('../controllers/user/accept-friend-request');
 
 const upload = multer();
 const router = express.Router();
@@ -20,6 +21,8 @@ router.post('/user/avatar', checkJwtToken, upload.single('avatar'), uploadAvatar
 
 router.get('/user/search', checkJwtToken, searchUsers);
 router.post('/user/friendrequest', checkJwtToken, addFriendRequest);
-
+router.post('/user/friendrequest/accept', checkJwtToken, (req, res, next) => {
+  res.status(200).send();
+});
 
 module.exports = router;
