@@ -42,7 +42,10 @@ app.use('/api', routes.postRouter);
  */
 app.use((err, req, res, next) => {
   if (err.name === 'SocialNetworkError') {
-    const { status, errors } = err;
+    const {
+      status,
+      errors
+    } = err;
 
     return res.status(status).json(errors);
   }
@@ -50,6 +53,12 @@ app.use((err, req, res, next) => {
   console.error('Error 500', err);
   return res.status(500).json({
     message: err.message,
+  });
+});
+
+app.use('*', (req, res, next) => {
+  return res.status(404).send({
+    message: 'Se siente, tus amigos no están aquí',
   });
 });
 

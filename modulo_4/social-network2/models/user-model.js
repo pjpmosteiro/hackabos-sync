@@ -2,7 +2,9 @@
 
 const mongoose = require('mongoose');
 
-const { Schema } = mongoose;
+const {
+  Schema,
+} = mongoose;
 
 const userSchema = new Schema({
   uuid: {
@@ -20,6 +22,14 @@ const userSchema = new Schema({
     description: String,
   },
 });
+// indexamos el esquema- TEST
+
+userSchema.index({
+  fullName: 'text',
+  'preferences.linkedIn': 'text',
+  'preferences.twitter': 'text',
+  'preferences.github': 'text'
+}, );
 
 const User = mongoose.model('User', userSchema);
 
