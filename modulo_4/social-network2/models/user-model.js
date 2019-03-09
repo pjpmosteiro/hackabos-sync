@@ -11,7 +11,13 @@ const userSchema = new Schema({
     type: String,
     unique: true,
   },
-  friends: [],
+  // Insercion de friends
+  friends: [{
+    uuid: String,
+    createdAt: Date,
+    confirmedAt: Date,
+    rejectedAt: Date,
+  }],
   avatarUrl: String,
   fullName: String,
   preferences: {
@@ -21,15 +27,29 @@ const userSchema = new Schema({
     github: String,
     description: String,
   },
+
 });
-// indexamos el esquema- TEST
+
+
+// -rejectedAt
+//
+// -acceptedAt
+//
+// -createdAt
+//
+// -friend
+//
+// -me
+
+
+// indexamos el esquema
 
 userSchema.index({
   fullName: 'text',
   'preferences.linkedIn': 'text',
   'preferences.twitter': 'text',
-  'preferences.github': 'text'
-}, );
+  'preferences.github': 'text',
+});
 
 const User = mongoose.model('User', userSchema);
 
