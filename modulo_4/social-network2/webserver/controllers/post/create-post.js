@@ -13,58 +13,64 @@ async function validate(payload) {
 }
 
 async function createPost(req, res, next) {
-    const {
-      claims
-    } = req;
-    const {
-      uuid
-    } = claims;
+  const {
+    claims,
+  } = req;
+  const {
+    uuid,
+  } = claims;
+
+  /**
+   * 1.1 Validate data
+   */
+  const postData = {
+    ...req.body,
+  };
+
+  try {
+    await validate(postData);
+  } catch (e) {
+    return res.status(400).send(e);
+  }
+
+  const data = {
+    owner: uuid,
+    author: uuid,
+    content: postData.content,
+    likes: [],
+    comments: [],
+    deletedAt: null,
+  };
+
+  try {
+    const postCreated = await PostModel.create(data);
+    /**
+     * After add post, insert this post in the wall
+     */
+    const postId = postCreated._id;
 
     /**
-     * 1.1 Validate data
+     uuid: String,
+     posts: [ObjectId]
      */
-    const postData = {
-      ...req.body
+    const filter = {
+      uuid,
+    };
+    const operation = {
+      $addToSet: {
+        posts: postId,
+      },
     };
 
-    try {
-      await validate(postData);
-    } catch (e) {
-      return res.status(400).send(e);
-    }
-
-    const data = {
-      owner: uuid,
-      author: uuid,
-      content: postData.content,
-      likes: [],
-      comments: [],
-      deletedAt: null,
+    const options = {
+      upsert: true,
     };
 
-    try {
-      const postCreated = await PostModel.create(data
-        // Despues de crear, enviar al array
-        const PostId: postCreated._id;
+    await WallModel.findOneAndUpdate(filter, operation, options);
+    return res.status(201).send(postCreated);
+  } catch (e) {
+    return res.status(500).send(e.message);
+  }
+}
 
-        //Buscar UUID
-        const filter = {
-          uuid,
-        };
-        //mandamos al array
-        const op {
-          $addToElement: {
-            posts: postId,
-          },
-        };
-
-        await WallModel.findOneAndUpdate(filter, op);
-
-        return res.status(201).send(postCreated);
-      }
-      catch (e) {
-        return res.status(500).send(e.message);
-      }
-    }
-
-    module.exports = createPost;
+module.exports = createPost;

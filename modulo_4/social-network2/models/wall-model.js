@@ -1,21 +1,21 @@
-'use strict';
+use strict ';
 
 const mongoose = require('mongoose');
-
-const Schema = require('Post');
-const ObjetID = Schema;
 
 const {
   Schema
 } = mongoose;
+const {
+  ObjectId
+} = Schema;
 
-const wallModel = new Schema({
+const wallSchema = new Schema({
   uuid: {
     type: String,
     unique: true,
   },
-  post: [Schema.Types.ObjectID],
-})
+  posts: [ObjectId],
+});
 
 const Wall = mongoose.model('Wall', wallSchema);
 
