@@ -1,12 +1,12 @@
-use strict ';
+'use strict ';
 
 const mongoose = require('mongoose');
 
 const {
-  Schema
+  Schema,
 } = mongoose;
 const {
-  ObjectId
+  ObjectId,
 } = Schema;
 
 const wallSchema = new Schema({
