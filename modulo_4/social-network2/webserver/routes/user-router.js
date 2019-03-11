@@ -11,6 +11,7 @@ const searchUsers = require('../controllers/user/search-user');
 const addFriendRequest = require('../controllers/user/add-friend-request');
 const getFriendRequests = require('../controllers/user/get-friend-requests');
 const acceptFriendRequest = require('../controllers/user/accept-friend-request');
+const getUserWall = require('../controllers/user/get-user-wall');
 
 const upload = multer();
 const router = express.Router();
@@ -22,6 +23,7 @@ router.get('/user/search', checkJwtToken, searchUsers);
 router.post('/user/friendrequest', checkJwtToken, addFriendRequest);
 router.get('/user/friendrequest', checkJwtToken, getFriendRequests);
 router.post('/user/friendrequest/accept', checkJwtToken, acceptFriendRequest);
+router.get('/user/wall', checkJwtToken, getUserWall);
 
 
 module.exports = router;
