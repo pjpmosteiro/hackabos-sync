@@ -26,9 +26,7 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "styles": [ "src/scss/styles.scss", "./node_modules/simple-css-reset/reset.css"],
             "scripts": [],
             "es5BrowserSupport": true
           },
