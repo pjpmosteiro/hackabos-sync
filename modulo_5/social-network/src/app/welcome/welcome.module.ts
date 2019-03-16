@@ -11,4 +11,4 @@ import { WelcomeFormsComponent } from './components/welcome-forms/welcome-forms.
   declarations: [WelcomeComponent, WelcomeHeroComponent, WelcomeFormsComponent],
   imports: [CommonModule, WelcomeRoutingModule, SharedModule]
 })
-export class WelcomeModule {}
+export class WelcomeModule { }
