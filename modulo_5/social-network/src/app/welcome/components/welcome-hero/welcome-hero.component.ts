@@ -6,7 +6,7 @@ import { faSearch, faUsers, faComments } from '@fortawesome/free-solid-svg-icons
   templateUrl: './welcome-hero.component.html',
   styleUrls: ['./welcome-hero.component.scss']
 })
-export class WelcomeFormsComponent {
+export class WelcomeHeroComponent {
 
   rows = [
     { id: 1, icon: faSearch, message: 'Find people like you' },
@@ -16,4 +16,3 @@ export class WelcomeFormsComponent {
   ]
 
 }
-export class WelcomeHeroComponent { }
