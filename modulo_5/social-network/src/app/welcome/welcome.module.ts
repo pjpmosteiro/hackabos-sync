@@ -10,7 +10,7 @@ import { AuthModule } from '../auth/auth.module';
 
 
 @NgModule({
-  declarations: [WelcomeComponent, WelcomeHeroComponent, WelcomeFormsComponent, AuthModule],
+  declarations: [WelcomeComponent, WelcomeHeroComponent, WelcomeFormsComponent],
   imports: [CommonModule, WelcomeRoutingModule, SharedModule, FontAwesomeModule, AuthModule]
 })
 export class WelcomeModule { }
