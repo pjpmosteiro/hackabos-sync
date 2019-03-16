@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { WelcomeComponent } from './components/welcome/welcome.component';
+import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 import { SiteLayoutComponent } from '../shared/components/site-layout/site-layout.component';
 
 const routes: Routes = [
@@ -9,8 +9,8 @@ const routes: Routes = [
     component: SiteLayoutComponent,
     children: [
       {
-        path: 'welcome',
-        component: WelcomeComponent
+        path: 'about',
+        component: AboutComponent
       }
     ]
   }
@@ -18,6 +18,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: []
 })
-export class WelcomeRoutingModule {}
+export class AboutRoutingModule {}

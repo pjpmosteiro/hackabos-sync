@@ -9,8 +9,14 @@ import { AboutModule } from './about/about.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, WelcomeModule, DashboardModule, AboutModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    WelcomeModule,
+    DashboardModule,
+    AboutModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

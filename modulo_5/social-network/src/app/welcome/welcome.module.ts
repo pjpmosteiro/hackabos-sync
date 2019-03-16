@@ -9,4 +9,4 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [WelcomeComponent],
   imports: [CommonModule, WelcomeRoutingModule, SharedModule]
 })
-export class WelcomeModule { }
+export class WelcomeModule {}
