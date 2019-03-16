@@ -19,4 +19,4 @@ import { RouterModule } from '@angular/router';
     SiteLayoutFooterComponent
   ]
 })
-export class SharedModule { }
+export class SharedModule {}
