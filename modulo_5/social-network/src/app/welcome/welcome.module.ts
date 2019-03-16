@@ -4,8 +4,9 @@ import { CommonModule } from '@angular/common';
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
   declarations: [WelcomeComponent],
-  imports: [CommonModule, WelcomeRoutingModule]
+  imports: [CommonModule, WelcomeRoutingModule, SharedModule]
 })
 export class WelcomeModule { }
