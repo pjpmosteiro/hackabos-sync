@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faHackerrank } from '@fortawesome/free-brands-svg-icons';
+import { faYelp } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'sn-site-layout-header',
@@ -7,6 +7,6 @@ import { faHackerrank } from '@fortawesome/free-brands-svg-icons';
   styleUrls: ['./site-layout-header.component.scss']
 })
 export class SiteLayoutHeaderComponent {
-  logo = faHackerrank;
-  title = 'The Social Network';
+  logo = faYelp;
+  title = 'Pablo Logistics';
 }
