@@ -1,0 +1,17 @@
+<div>
+  <ul>
+    <li [class.selected]="isRegisterFormVisible">
+      <a (click)="toggleForm()">Register</a>
+    </li>
+    <li [class.selected]="!isRegisterFormVisible">
+      <a (click)="toggleForm()">Login</a>
+    </li>
+  </ul>
+
+  <div class="register-form" *ngIf="isRegisterFormVisible">
+    <sn-register></sn-register>
+  </div>
+  <div class="login-form" *ngIf="!isRegisterFormVisible">
+    <sn-login></sn-login>
+  </div>
+</div>
