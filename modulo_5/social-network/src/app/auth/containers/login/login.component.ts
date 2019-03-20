@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { MailValidator } from '../../validators/mail.validator';
 
 @Component({
   selector: 'sn-login',
@@ -8,10 +9,13 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  loginForm = this.fb.group({
-    email: ['', [Validators.required]],
-    password: ['', [Validators.required]]
-  });
+  loginForm = this.fb.group(
+    {
+      email: ['', [Validators.required, MailValidator]],
+      password: ['', [Validators.required]]
+    },
+    { updateOn: 'blur' }
+  );
 
   constructor(private fb: FormBuilder, private authService: AuthService) {}
 

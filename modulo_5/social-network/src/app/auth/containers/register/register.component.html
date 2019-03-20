@@ -1,3 +1,56 @@
-<p>
-  register works!
-</p>
+<sn-form>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="form-control">
+      <input type="text" placeholder="Full name" formControlName="fullName" />
+      <div
+        *ngIf="
+          registerForm.get('fullName').invalid &&
+          registerForm.get('fullName').dirty
+        "
+      >
+        <span>This field is required</span>
+      </div>
+    </div>
+    <div class="form-control">
+      <input type="text" placeholder="Email" formControlName="email" />
+      <div
+        *ngIf="
+          registerForm.get('email').invalid && registerForm.get('email').dirty
+        "
+      >
+        <span>This field is required</span>
+      </div>
+    </div>
+    <div class="form-control">
+      <input type="text" placeholder="Password" formControlName="password" />
+      <div
+        *ngIf="
+          registerForm.get('password').invalid &&
+          registerForm.get('password').dirty
+        "
+      >
+        <span>This field is required</span>
+      </div>
+    </div>
+    <div class="form-control">
+      <input
+        type="text"
+        placeholder="Confirm password"
+        formControlName="confirmPassword"
+      />
+      <div
+        *ngIf="
+          registerForm.get('confirmPassword').invalid &&
+          registerForm.get('confirmPassword').dirty
+        "
+      >
+        <span>This field is required</span>
+      </div>
+    </div>
+    <button>
+      Login
+    </button>
+  </form>
+</sn-form>
+
+<p>{{ registerForm.value | json }}</p>
