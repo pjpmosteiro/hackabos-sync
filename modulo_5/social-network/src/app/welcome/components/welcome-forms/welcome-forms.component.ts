@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
 })
 export class WelcomeFormsComponent {
   isRegisterFormVisible = true;
-
-  toggleForm($event) {
+  toggleForm() {
     this.isRegisterFormVisible = !this.isRegisterFormVisible;
   }
 }

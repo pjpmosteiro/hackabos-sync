@@ -1,9 +1,4 @@
-import { Component } from '@angular/core';
-import {
-  faSearch,
-  faUsers,
-  faComments
-} from '@fortawesome/free-solid-svg-icons';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'sn-welcome-hero',
@@ -11,9 +6,5 @@ import {
   styleUrls: ['./welcome-hero.component.scss']
 })
 export class WelcomeHeroComponent {
-  rows = [
-    { id: 1, icon: faSearch, message: 'Find people like you' },
-    { id: 2, icon: faUsers, message: 'Build you friends network' },
-    { id: 3, icon: faComments, message: 'Keep in touch' }
-  ];
+  @Input() heroRows;
 }

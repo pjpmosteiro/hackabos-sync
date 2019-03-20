@@ -8,9 +8,14 @@ import { WelcomeHeroComponent } from './components/welcome-hero/welcome-hero.com
 import { WelcomeFormsComponent } from './components/welcome-forms/welcome-forms.component';
 import { AuthModule } from '../auth/auth.module';
 
-
 @NgModule({
   declarations: [WelcomeComponent, WelcomeHeroComponent, WelcomeFormsComponent],
-  imports: [CommonModule, WelcomeRoutingModule, SharedModule, FontAwesomeModule, AuthModule]
+  imports: [
+    CommonModule,
+    WelcomeRoutingModule,
+    SharedModule,
+    FontAwesomeModule,
+    AuthModule
+  ]
 })
-export class WelcomeModule { }
+export class WelcomeModule {}
