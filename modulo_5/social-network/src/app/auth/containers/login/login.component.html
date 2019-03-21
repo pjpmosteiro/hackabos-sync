@@ -4,12 +4,16 @@
       <input type="text" placeholder="Email" formControlName="email" />
     </sn-form-control>
     <sn-form-control [control]="loginForm.get('password')">
-      <input type="text" placeholder="Password" formControlName="password" />
+      <input
+        type="password"
+        placeholder="Password"
+        formControlName="password"
+      />
     </sn-form-control>
-    <button>
-      Login
-    </button>
+    <div class="button-wrapper">
+      <button type="submit">
+        Login
+      </button>
+    </div>
   </form>
 </sn-form>
-
-<p>{{ loginForm.value | json }}</p>
