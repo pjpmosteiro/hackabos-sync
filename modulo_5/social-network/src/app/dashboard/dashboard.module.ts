@@ -10,7 +10,9 @@ import { DashboardFooterComponent } from './components/dashboard-footer/dashboar
 import { WallComponent } from './containers/wall/wall.component';
 import { FriendsComponent } from './containers/friends/friends.component';
 import { MyAccountComponent } from './containers/my-account/my-account.component';
-import { MyaccountComponent } from './myaccount/myaccount.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxsModule } from '@ngxs/store';
+import { PostState } from './store/post.state';
 
 @NgModule({
   declarations: [
@@ -21,9 +23,13 @@ import { MyaccountComponent } from './myaccount/myaccount.component';
     DashboardFooterComponent,
     WallComponent,
     FriendsComponent,
-    MyAccountComponent,
-    MyaccountComponent
+    MyAccountComponent
   ],
-  imports: [CommonModule, DashboardRoutingModule]
+  imports: [
+    CommonModule,
+    DashboardRoutingModule,
+    FontAwesomeModule,
+    NgxsModule.forFeature([PostState])
+  ]
 })
 export class DashboardModule {}
