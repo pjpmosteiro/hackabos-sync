@@ -17,7 +17,5 @@ export class WallComponent implements OnInit {
 
   ngOnInit() {
     this.store.dispatch(new GetPosts());
-
-    this.posts$.subscribe(posts => console.log('POSTS!!:', posts));
   }
 }

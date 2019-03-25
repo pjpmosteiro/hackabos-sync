@@ -25,10 +25,10 @@ import { environment } from '../environments/environment';
     NgxsModule.forRoot([], {
       developmentMode: !environment.production
     }),
-    AppRoutingModule,
     WelcomeModule,
     DashboardModule,
-    AboutModule
+    AboutModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,8 @@ import { MyAccountComponent } from './containers/my-account/my-account.component
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxsModule } from '@ngxs/store';
 import { PostState } from './store/post.state';
+import { PostComponent } from './components/post/post.component';
+import { PublisherComponent } from './components/publisher/publisher.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { PostState } from './store/post.state';
     DashboardFooterComponent,
     WallComponent,
     FriendsComponent,
-    MyAccountComponent
+    MyAccountComponent,
+    PostComponent,
+    PublisherComponent
   ],
   imports: [
     CommonModule,
