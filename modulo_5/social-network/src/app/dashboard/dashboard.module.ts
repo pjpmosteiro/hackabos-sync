@@ -15,6 +15,13 @@ import { NgxsModule } from '@ngxs/store';
 import { PostState } from './store/post.state';
 import { PostComponent } from './components/post/post.component';
 import { PublisherComponent } from './components/publisher/publisher.component';
+import { PostHeadComponent } from './components/post-head/post-head.component';
+import { PostBodyComponent } from './components/post-body/post-body.component';
+import { LikeComponent } from './components/like/like.component';
+import { PostCommentComponent } from './components/post-comment/post-comment.component';
+import { PostCommentCounterComponent } from './components/post-comment-counter/post-comment-counter.component';
+import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,13 +34,20 @@ import { PublisherComponent } from './components/publisher/publisher.component';
     FriendsComponent,
     MyAccountComponent,
     PostComponent,
-    PublisherComponent
+    PublisherComponent,
+    PostHeadComponent,
+    PostBodyComponent,
+    LikeComponent,
+    PostCommentComponent,
+    PostCommentCounterComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     FontAwesomeModule,
-    NgxsModule.forFeature([PostState])
+    FormsModule,
+    NgxsModule.forFeature([PostState]),
+    SharedModule
   ]
 })
 export class DashboardModule {}

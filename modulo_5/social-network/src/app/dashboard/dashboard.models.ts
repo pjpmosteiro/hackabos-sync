@@ -1,8 +1,4 @@
-export interface PostCollection {
-  [key: string]: PostResponse;
-}
-
-export interface PostResponse {
+export interface Post {
   likes: string[];
   author: Author;
   owner: Author;
@@ -23,4 +19,9 @@ export interface Comment {
   message: string;
   createdAt: number;
   id: string;
+}
+
+export interface PostRequest {
+  content: string;
+  uuid?: string;
 }

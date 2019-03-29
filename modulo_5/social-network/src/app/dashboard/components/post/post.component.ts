@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { AddComment } from '../../store/post.action';
 
 @Component({
   selector: 'sn-post',
@@ -7,8 +9,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PostComponent implements OnInit {
   @Input() post;
+  @Input() user;
 
-  constructor() {}
+  constructor(private store: Store) {}
+
+  addComment(message) {
+    this.store.dispatch(new AddComment(this.post.id, message));
+  }
 
   ngOnInit() {}
 }
