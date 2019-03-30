@@ -22,6 +22,9 @@ import { PostCommentComponent } from './components/post-comment/post-comment.com
 import { PostCommentCounterComponent } from './components/post-comment-counter/post-comment-counter.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { ErrorModule } from '../error/error.module';
+import { FriendRequestsComponent } from './components/friend-requests/friend-requests.component';
+import { FriendsState } from './store/friends.state';
 
 @NgModule({
   declarations: [
@@ -39,14 +42,16 @@ import { FormsModule } from '@angular/forms';
     PostBodyComponent,
     LikeComponent,
     PostCommentComponent,
-    PostCommentCounterComponent
+    PostCommentCounterComponent,
+    FriendRequestsComponent
   ],
   imports: [
     CommonModule,
     DashboardRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    NgxsModule.forFeature([PostState]),
+    ErrorModule,
+    NgxsModule.forFeature([PostState, FriendsState]),
     SharedModule
   ]
 })

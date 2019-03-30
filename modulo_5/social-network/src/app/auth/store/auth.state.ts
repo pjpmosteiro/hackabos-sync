@@ -15,6 +15,7 @@ import {
 } from './auth.actions';
 import { Navigate } from '@ngxs/router-plugin';
 import { tap, catchError } from 'rxjs/operators';
+import { SetErrors } from 'src/app/error/store/error.actions';
 
 @State<Auth>({
   name: 'auth',
@@ -23,9 +24,9 @@ import { tap, catchError } from 'rxjs/operators';
   }
 })
 export class AuthState {
-  constructor(private store: Store, private authService: AuthService) { }
+  constructor(private store: Store, private authService: AuthService) {}
 
-  @Action(Login, { cancelUncompleted: true }) i
+  @Action(Login, { cancelUncompleted: true })
   login({ dispatch }: StateContext<Auth>, action: Login) {
     return this.authService.login(action.login).pipe(
       tap(data => dispatch(new LoginSuccess(data))),
@@ -69,17 +70,18 @@ export class AuthState {
     patchState({ ...profile });
   }
 
+  @Action(Logout)
+  logout({ setState, dispatch }: StateContext<Auth>) {
+    this.authService.logout();
+    setState(null);
+    dispatch(new Navigate(['/welcome']));
+  }
+
   @Action(RegisterSuccess)
-  registerSuccess(ctx: StateContext<Auth>) { }
+  registerSuccess(ctx: StateContext<Auth>) {}
 
   @Action([LoginFailed, RegisterFailed, GetUserProfileFailed])
-  error(ctx: StateContext<Auth>, { errors }: any) { }
-
-  @Action(Logout)
-  Logout(ctx: StateContext<Auth>) {
-    this.authService.logout();
-    ctx.setState(null);
-    ctx.dispatch(new Navigate(['/welcome']));
-
+  error({ dispatch }: StateContext<Auth>, { errors }: any) {
+    dispatch(new SetErrors(errors));
   }
 }

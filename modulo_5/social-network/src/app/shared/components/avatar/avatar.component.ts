@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
   selector: 'sn-avatar',
   template: `
     <img
+      *ngIf="imageUrl"
       [src]="imageUrl"
       [ngStyle]="{ width: width, height: height, 'min-width': width }"
     />
@@ -27,6 +28,6 @@ export class AvatarComponent {
     }
   }
 
-  @Input() width = '40px';
-  @Input() height = '40px';
+  @Input() width = 'auto';
+  @Input() height = 'auto';
 }

@@ -2,8 +2,10 @@
   <sn-avatar [user]="post.author"></sn-avatar>
   <div>
     <h4>
-      <a>{{ post.author.fullName }}</a>
+      <a (click)="navigateToWall(post.author.uuid)">{{
+        post.author.fullName
+      }}</a>
     </h4>
-    <small>{{ post.createdAt | date: 'short' }}</small>
+    <small>{{ post.createdAt | userFriendlyDate }}</small>
   </div>
 </div>

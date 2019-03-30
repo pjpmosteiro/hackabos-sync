@@ -1,6 +1,9 @@
+<sn-errors> </sn-errors>
+
 <sn-publisher
   [user]="currentUser$ | async"
   (publish)="publishPost($event)"
+  placeholder="What are you thinking motherfucker?"
 ></sn-publisher>
 
 <ng-container *ngIf="(currentUser$ | async) as currentUser">

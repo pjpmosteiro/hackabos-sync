@@ -12,6 +12,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { AboutModule } from './about/about.module';
 
 import { environment } from '../environments/environment';
+import { ErrorModule } from './error/error.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { environment } from '../environments/environment';
     WelcomeModule,
     DashboardModule,
     AboutModule,
+    ErrorModule,
     AppRoutingModule
   ],
   providers: [],

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Store } from '@ngxs/store';
-import { AddComment } from '../../store/post.action';
+import { AddComment, Like } from '../../store/post.action';
 
 @Component({
   selector: 'sn-post',
@@ -15,6 +15,10 @@ export class PostComponent implements OnInit {
 
   addComment(message) {
     this.store.dispatch(new AddComment(this.post.id, message));
+  }
+
+  like() {
+    this.store.dispatch(new Like(this.post.id));
   }
 
   ngOnInit() {}

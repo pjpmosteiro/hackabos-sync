@@ -11,9 +11,11 @@ import { NgxsModule } from '@ngxs/store';
 import { AuthState } from './store/auth.state';
 import { JwtInterceptor } from './services/jwt.interceptor';
 import { ErrorInterceptor } from './services/error.interceptor';
+import { ErrorModule } from '../error/error.module';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
-  declarations: [LoginComponent, RegisterComponent],
+  declarations: [LoginComponent, RegisterComponent, UpdateComponent],
   imports: [
     CommonModule,
     AuthRoutingModule,
@@ -21,6 +23,7 @@ import { ErrorInterceptor } from './services/error.interceptor';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ErrorModule,
     NgxsModule.forFeature([AuthState])
   ],
   providers: [

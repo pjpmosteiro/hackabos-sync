@@ -8,7 +8,10 @@ import { faCaretSquareRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class PublisherComponent implements OnInit {
   @Input() user;
+  @Input() placeholder;
+
   @Output() publish = new EventEmitter();
+
   content = '';
 
   publishIcon = faCaretSquareRight;
