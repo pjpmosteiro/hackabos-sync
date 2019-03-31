@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { GetPosts, AddPost } from '../../store/post.action';
 import { PostState } from '../../store/post.state';
@@ -17,11 +17,17 @@ export class WallComponent implements OnInit {
   @Select(PostState) posts$: Observable<Post[]>;
   @Select(AuthState) currentUser$: Observable<Auth>;
 
-  constructor(private store: Store, private route: ActivatedRoute) {}
+  constructor(
+    private store: Store,
+    private route: ActivatedRoute,
+    private element: ElementRef
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe(routeParams => {
       this.store.dispatch(new GetPosts(routeParams.userId));
+
+      this.element.nativeElement.parentElement.scrollTop = 0;
     });
   }
 

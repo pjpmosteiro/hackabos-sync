@@ -25,6 +25,8 @@ import { FormsModule } from '@angular/forms';
 import { ErrorModule } from '../error/error.module';
 import { FriendRequestsComponent } from './components/friend-requests/friend-requests.component';
 import { FriendsState } from './store/friends.state';
+import { AuthModule } from '../auth/auth.module';
+import { PrivateWallComponent } from './components/private-wall/private-wall.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { FriendsState } from './store/friends.state';
     LikeComponent,
     PostCommentComponent,
     PostCommentCounterComponent,
-    FriendRequestsComponent
+    FriendRequestsComponent,
+    PrivateWallComponent
   ],
   imports: [
     CommonModule,
@@ -51,6 +54,7 @@ import { FriendsState } from './store/friends.state';
     FontAwesomeModule,
     FormsModule,
     ErrorModule,
+    AuthModule,
     NgxsModule.forFeature([PostState, FriendsState]),
     SharedModule
   ]

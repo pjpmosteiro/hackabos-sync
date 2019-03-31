@@ -24,6 +24,9 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
         <p class="error-message" *ngIf="control.hasError('malformedMail')">
           <fa-icon [icon]="errorIcon"> </fa-icon> This email is invalid
         </p>
+        <p class="error-message" *ngIf="control.hasError('malformedUrl')">
+          <fa-icon [icon]="errorIcon"> </fa-icon> This is not a valid URL
+        </p>
       </ng-container>
 
       <ng-container *ngIf="group?.invalid && (group?.dirty || group?.touched)">

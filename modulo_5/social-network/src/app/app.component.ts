@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { GlobalState } from './shared/state/global.state';
+import { Select } from '@ngxs/store';
 
 @Component({
   selector: 'sn-root',
@@ -7,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Hola soy Yago';
+  @Select(GlobalState.isFetching) isFetching$;
 
   constructor() {}
 

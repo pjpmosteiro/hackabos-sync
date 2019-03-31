@@ -13,6 +13,8 @@ import { AboutModule } from './about/about.module';
 
 import { environment } from '../environments/environment';
 import { ErrorModule } from './error/error.module';
+import { GlobalState } from './shared/state/global.state';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,12 +25,13 @@ import { ErrorModule } from './error/error.module';
     }),
     NgxsLoggerPluginModule.forRoot({ logger: console, collapsed: false }),
     NgxsRouterPluginModule.forRoot(),
-    NgxsModule.forRoot([], {
+    NgxsModule.forRoot([GlobalState], {
       developmentMode: !environment.production
     }),
     WelcomeModule,
     DashboardModule,
     AboutModule,
+    SharedModule,
     ErrorModule,
     AppRoutingModule
   ],
