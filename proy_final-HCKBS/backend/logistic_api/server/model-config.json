@@ -35,7 +35,7 @@
     "dataSource": "db",
     "public": false
   },
-  "log01": {
+  "lg01": {
     "dataSource": "mongoDB",
     "public": true
   }
