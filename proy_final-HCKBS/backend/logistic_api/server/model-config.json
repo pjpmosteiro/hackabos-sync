@@ -14,7 +14,8 @@
     ]
   },
   "User": {
-    "dataSource": "db"
+    "dataSource": "db",
+    "public": true
   },
   "AccessToken": {
     "dataSource": "db",
@@ -26,16 +27,13 @@
   },
   "RoleMapping": {
     "dataSource": "db",
-    "public": false,
-    "options": {
-      "strictObjectIDCoercion": true
-    }
+    "public": false
   },
   "Role": {
     "dataSource": "db",
     "public": false
   },
-  "log01": {
+  "lg01": {
     "dataSource": "mongoDB",
     "public": true
   }
