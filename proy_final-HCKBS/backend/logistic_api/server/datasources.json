@@ -12,5 +12,15 @@
     "name": "mongoDB",
     "user": "lex",
     "connector": "mongodb"
+  },
+  "mysql": {
+    "host": "ws.pablojprieto.com.es",
+    "port": 3306,
+    "url": "",
+    "database": "logistic",
+    "password": "Mosteiro1",
+    "name": "mysql",
+    "user": "logistic",
+    "connector": "mysql"
   }
 }
