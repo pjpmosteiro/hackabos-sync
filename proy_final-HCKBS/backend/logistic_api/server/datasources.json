@@ -1,7 +1,8 @@
 {
   "db": {
     "name": "db",
-    "connector": "memory"
+    "connector": "memory",
+    "file": "users.json"
   },
   "mongoDB": {
     "host": "cluster0-3qi3i.gcp.mongodb.net",

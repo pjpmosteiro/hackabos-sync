@@ -1,0 +1,20 @@
+{
+  "ids": {
+    "User": 2,
+    "AccessToken": 2,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1
+  },
+  "models": {
+    "User": {
+      "1": "{\"realm\":\"string\",\"username\":\"test\",\"password\":\"$2a$10$JRBqJL.v9sHJ1gQYB9uH1.QRw.JnP3WnD0GdmN1IG18rtf1xe5t/m\",\"email\":\"p@p.com\",\"emailVerified\":false,\"id\":1}"
+    },
+    "AccessToken": {
+      "2w5hBjU1QZT7fsmGnLWuQ2UhXAz8T6198RFReSA7xYUM88JmShdP2WLTdpB0cBJ7": "{\"id\":\"2w5hBjU1QZT7fsmGnLWuQ2UhXAz8T6198RFReSA7xYUM88JmShdP2WLTdpB0cBJ7\",\"ttl\":1209600,\"created\":\"2019-04-03T18:09:32.013Z\",\"userId\":1}"
+    },
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {}
+  }
+}
