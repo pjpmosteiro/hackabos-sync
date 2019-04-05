@@ -1,0 +1,11 @@
+<div class="post-content-head">
+  <sn-avatar [user]="post.author"></sn-avatar>
+  <div>
+    <h4>
+      <a (click)="navigateToWall(post.author.uuid)">{{
+        post.author.fullName
+      }}</a>
+    </h4>
+    <small>{{ post.createdAt | userFriendlyDate }}</small>
+  </div>
+</div>

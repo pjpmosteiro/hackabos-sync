@@ -1,0 +1,17 @@
+<div>
+  <ul>
+    <li [class.selected]="isRegisterFormVisible">
+      <a snPreventDefault href="" (click)="toggleForm(true)">Registro</a>
+    </li>
+    <li [class.selected]="!isRegisterFormVisible">
+      <a snPreventDefault href="" (click)="toggleForm(false)">Iniciar sesión</a>
+    </li>
+  </ul>
+
+  <div class="register-form" *ngIf="isRegisterFormVisible">
+    <sn-register></sn-register>
+  </div>
+  <div class="login-form" *ngIf="!isRegisterFormVisible">
+    <sn-login></sn-login>
+  </div>
+</div>

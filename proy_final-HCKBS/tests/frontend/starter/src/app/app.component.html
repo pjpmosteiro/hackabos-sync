@@ -1,0 +1,34 @@
+<header>
+  <mat-toolbar>
+    <button type="button" mat-button (click)="drawer.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    Blog
+  </mat-toolbar>
+</header>
+<main>
+  <mat-drawer-container autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list>
+        <mat-list-item>
+          <button mat-button color="primary" routerLink="home">Inicio</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button color="primary" routerLink="articles">Artículos</button>
+        </mat-list-item>
+        <mat-list-item>
+          <button mat-button color="primary" routerLink="about">About</button>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <div class="page">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-container>
+</main>
+<footer>
+  <mat-toolbar>@Copyright 2019
+    <button mat-button color="primary">
+      About
+    </button></mat-toolbar>
+</footer>

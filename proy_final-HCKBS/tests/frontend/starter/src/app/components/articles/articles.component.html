@@ -1,0 +1,10 @@
+<h1 class="mat-display-2">Articles</h1>
+<mat-divider></mat-divider>
+<article class="mat-typography" *ngFor="let article of (articles$ | async)">
+  <h1 class="mat-h1">{{ article.title.toUpperCase() }}</h1>
+  <p>{{ article.body }}</p>
+  <button (click)="goToArticle(article.id)" mat-raised-button color="primary">
+    Read
+  </button>
+  <mat-divider></mat-divider>
+</article>
