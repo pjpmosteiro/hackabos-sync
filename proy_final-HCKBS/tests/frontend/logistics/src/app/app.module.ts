@@ -12,6 +12,9 @@ import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { Section1Component } from './home/components/section1/section1.component';
+import { Section2Component } from './home/components/section2/section2.component';
+import { Section3Component } from './home/components/section3/section3.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { RegisterComponent } from './register/register.component';
     HeaderComponent,
     SidenavListComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    Section1Component,
+    Section2Component,
+    Section3Component
   ],
   imports: [
     BrowserModule,

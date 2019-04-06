@@ -1,7 +1,7 @@
 <section fxLayout="column wrap">
   <div class="header">
     <div class="tit" fxFlexAlign="center">
-      <p>Bienvenidos a Pablo Logistics</p>
+      <p>Pablo Logistics</p>
     </div>
     <div class="stit" fxFlexAlign="center">
       <p>Lo tenemos, lo enviamos</p>
@@ -11,28 +11,13 @@
 
   <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
     <mat-tab label="SECCION 1">
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit
-        perferendis vero cum minima sunt recusandae. Aliquid ratione fugit
-        officia, laboriosam optio fuga esse consequatur molestiae illum. Quis
-        possimus exercitationem minus.
-      </p>
-    </mat-tab>
-    <mat-tab label="TRACKING">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse beatae
-        dolorem labore tempora perferendis quia, molestias perspiciatis quo
-        impedit ad aspernatur et culpa magnam cupiditate omnis natus fugiat in
-        dolores?
-      </p>
+      <app-section1></app-section1>
     </mat-tab>
     <mat-tab label="SECCION 2">
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam illum
-        molestiae, odio neque unde exercitationem. Voluptas placeat earum,
-        dolorem repellendus architecto impedit, libero quidem esse molestiae
-        reprehenderit aut nemo eligendi.
-      </p>
+      <app-section2></app-section2>
+    </mat-tab>
+    <mat-tab label="SECCION 3">
+      <app-section3></app-section3>
     </mat-tab>
   </mat-tab-group>
 </section>
