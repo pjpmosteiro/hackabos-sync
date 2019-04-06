@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-section-bar',
   templateUrl: './section-bar.component.html',
@@ -11,5 +12,7 @@ export class SectionBarComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  public executeSelectedChange = event => {
+    console.log(event);
+  };
 }
