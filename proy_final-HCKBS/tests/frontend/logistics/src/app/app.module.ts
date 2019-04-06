@@ -15,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
 import { Section1Component } from './home/components/section1/section1.component';
 import { Section2Component } from './home/components/section2/section2.component';
 import { Section3Component } from './home/components/section3/section3.component';
+import { SectionBarComponent } from './home/components/section-bar/section-bar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Section3Component } from './home/components/section3/section3.component
     RegisterComponent,
     Section1Component,
     Section2Component,
-    Section3Component
+    Section3Component,
+    SectionBarComponent
   ],
   imports: [
     BrowserModule,
