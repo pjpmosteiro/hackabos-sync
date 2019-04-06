@@ -1,7 +1,18 @@
+
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
 a {
     text-decoration: none;
     color: white;
 }
+
+h2 {
+    text-decoration: none;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+}
+
 
 a:hover, a:active{
     color: lightgray;
@@ -15,6 +26,7 @@ a:hover, a:active{
 
 mat-toolbar{
     border-radius: 3px;
+    background: #4d1410;
 }
 
 @media(max-width: 959px){
