@@ -1,0 +1,19 @@
+<mat-nav-list>
+  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon> <span class="nav-caption">Inicio</span>
+  </a>
+  <a mat-list-item routerLink="/login" (click)="onSidenavClose()">
+    <mat-icon>account_circle</mat-icon> <span class="nav-caption">Iniciar sesión</span>
+  </a>
+  <a mat-list-item routerLink="/register" (click)="onSidenavClose()">
+    <mat-icon>add-box</mat-icon><span class="nav-caption">Registro</span>
+  </a>
+  <mat-list-item [matMenuTriggerFor]="menu">
+    <mat-icon>search</mat-icon>
+    <a matline>Tracking</a>
+  </mat-list-item>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink=# (click)="onSidenavClose()">Por remitente</button>
+    <button mat-menu-item routerLink=# (click)="onSidenavClose()">Por nº de seguimiento</button>
+  </mat-menu>
+</mat-nav-list>
