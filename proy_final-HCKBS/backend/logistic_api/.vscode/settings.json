@@ -1,0 +1,12 @@
+{
+    "sshfs.configs": [
+        {
+            "agent": "$SSH_AUTH_SOCK",
+            "host": "frontend.int.redp.icu",
+            "name": "frontend",
+            "passphrase": true,
+            "privateKeyPath": "/home/pabloprieto/.ssh/id_rsa",
+            "username": true
+        }
+    ]
+}
