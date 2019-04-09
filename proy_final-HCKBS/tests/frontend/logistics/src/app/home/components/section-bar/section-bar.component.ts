@@ -16,3 +16,5 @@ export class SectionBarComponent implements OnInit {
     console.log(event);
   };
 }
+
+export class Sectionbar { };

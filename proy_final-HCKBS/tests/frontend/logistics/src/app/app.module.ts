@@ -16,6 +16,7 @@ import { Section1Component } from './home/components/section1/section1.component
 import { Section2Component } from './home/components/section2/section2.component';
 import { Section3Component } from './home/components/section3/section3.component';
 import { SectionBarComponent } from './home/components/section-bar/section-bar.component';
+import { NavbarComponent } from './login/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SectionBarComponent } from './home/components/section-bar/section-bar.c
     Section1Component,
     Section2Component,
     Section3Component,
-    SectionBarComponent
+    SectionBarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
