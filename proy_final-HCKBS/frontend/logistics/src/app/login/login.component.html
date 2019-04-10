@@ -1,4 +1,31 @@
-<app-home></app-home>
-
-
-<p> LOGIN OK</p>
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>Inicio de sesión</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form class="example-form">
+            <table class="example-full-width" cellspacing="0">
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Usuario" [(ngModel)]="username" name="username" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <mat-form-field class="example-full-width">
+                            <input matInput placeholder="Contraseña" [(ngModel)]="password" type="password"
+                                name="password" required>
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="login()" color="primary">Iniciar sesión</button>
+    </mat-card-actions>
+    <mat-card-footer>Pablo Logistics SSO - V0.0.1</mat-card-footer>
+</mat-card>

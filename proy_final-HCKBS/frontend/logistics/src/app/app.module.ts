@@ -3,6 +3,8 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FormsModule } from '@angular/forms';
+
 
 import { AppComponent } from "./app.component";
 import { LayoutComponent } from "./layout/layout.component";
@@ -16,6 +18,9 @@ import { Section1Component } from './home/components/section1/section1.component
 import { Section2Component } from './home/components/section2/section2.component';
 import { Section3Component } from './home/components/section3/section3.component';
 import { SectionBarComponent } from './home/components/section-bar/section-bar.component';
+import { UserComponent } from './user/user.component';
+import { CustomMaterialModule } from "./layout/material/material.module";
+import { ContentComponent } from './home/components/content/content.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +34,18 @@ import { SectionBarComponent } from './home/components/section-bar/section-bar.c
     Section1Component,
     Section2Component,
     Section3Component,
-    SectionBarComponent
+    SectionBarComponent,
+    UserComponent,
+    ContentComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    RoutingModule
+    RoutingModule,
+    CustomMaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

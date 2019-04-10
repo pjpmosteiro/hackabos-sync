@@ -7,9 +7,10 @@
   "mongoDB": {
     "host": "cluster0-3qi3i.gcp.mongodb.net",
     "port": 27017,
-    "url": "mongodb+srv://lex:@cluster0-3qi3i.gcp.mongodb.net/logistic",
+    "url": "mongodb+srv://lex:<password>@cluster0-3qi3i.gcp.mongodb.net/logistic",
     "database": "lg01",
-    "password": "",
+    "password": "<password>",
+
     "name": "mongoDB",
     "user": "lex",
     "connector": "mongodb"
@@ -19,7 +20,7 @@
     "port": 3306,
     "url": "",
     "database": "logistic",
-    "password": "",
+    "password": "<password>",
     "name": "mysql",
     "user": "logistic",
     "connector": "mysql"
