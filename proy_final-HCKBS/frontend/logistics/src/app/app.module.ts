@@ -39,5 +39,5 @@ import { SectionBarComponent } from './home/components/section-bar/section-bar.c
   ],
   providers: [],
   bootstrap: [AppComponent]
-})
+}) 
 export class AppModule { }
