@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from "./app.component";
 import { LayoutComponent } from "./layout/layout.component";
@@ -31,6 +32,9 @@ import { NavbarComponent } from './login/navbar/navbar.component';
     Section2Component,
     Section3Component,
     SectionBarComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
     NavbarComponent
   ],
   imports: [
@@ -38,7 +42,9 @@ import { NavbarComponent } from './login/navbar/navbar.component';
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    RoutingModule
+    RoutingModule,
+    CustomMaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

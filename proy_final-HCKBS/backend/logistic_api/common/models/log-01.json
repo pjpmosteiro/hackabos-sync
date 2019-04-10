@@ -17,6 +17,22 @@
     "id_tracking": {
       "type": "string",
       "required": true
+
+    },
+    "validations": [],
+    "relations": {},
+    "acls": [
+      {
+        "accessType": "*",
+        "principalType": "ROLE",
+        "principalId": "$unauthenticated",
+        "permission": "DENY"
+      }
+    ],
+    "methods": {}
+  }
+}
+=======
     }
   },
   "validations": [],
