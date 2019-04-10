@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material'
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private router: Router) { }
+  fname: string;
+  lname: string;
+  address: string;
+  email: string;
+  user: string;
+  password: string;
   ngOnInit() {
   }
-
+  register() {
+    alert("REGISTRO OK");
+    alert(this.fname);
+  }
 }

@@ -12,6 +12,7 @@ export class LoginComponent implements OnInit {
   password: string;
   ngOnInit() {
   }
+  //DATOS DE PRUEBA PARA TESTEAR LOGIN
   login(): void {
     if (this.username == 'admin' && this.password == 'admin') {
       this.router.navigate(["user"]);
