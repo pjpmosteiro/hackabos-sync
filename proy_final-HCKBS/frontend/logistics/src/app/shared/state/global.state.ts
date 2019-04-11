@@ -11,16 +11,7 @@ import {
   RegisterFailed,
   UpdateUserProfileFailed
 } from '../../auth/store/auth.actions';
-import {
-  AddPost,
-  AddCommentSuccess,
-  AddPostSuccess,
-  AddPostFailed
-} from 'src/app/dashboard/store/post.action';
-import {
-  AddComment,
-  AddCommentFailed
-} from '../../dashboard/store/post.action';
+
 
 @State<Global>({
   name: 'global',
@@ -34,7 +25,7 @@ export class GlobalState {
     return isFetching;
   }
 
-  @Action([Login, Register, AddPost, AddComment, UpdateUserProfile])
+  @Action([Login, Register, UpdateUserProfile])
   startFetching({ patchState }: StateContext<Global>) {
     patchState({ isFetching: true });
   }
@@ -42,13 +33,9 @@ export class GlobalState {
   @Action([
     LoginSuccess,
     RegisterSuccess,
-    AddPostSuccess,
-    AddCommentSuccess,
     UpdateUserProfileSuccess,
     LoginFailed,
     RegisterFailed,
-    AddPostFailed,
-    AddCommentFailed,
     UpdateUserProfileFailed
   ])
   endFetching({ patchState }: StateContext<Global>) {
