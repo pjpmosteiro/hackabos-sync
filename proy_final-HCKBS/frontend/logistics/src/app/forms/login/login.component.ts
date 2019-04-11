@@ -1,19 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material'
+import { MatDialog } from '@angular/material';
+import { Store } from '@ngxs/store';
 import { Login } from '../../auth/store/auth.actions';
+import { MailValidator } from '../../auth/validators/mail.validator';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  constructor(private router: Router) { }
-  username: string;
-  password: string;
-  //TODO: Ajustar funcion login para enrutar hacia el servicio
+export class LoginComponent {
+
+  loginForm = this.fb.group(
+    {
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]]
+    },
+    { updateOn: 'blur' }
+  );
+
+  constructor(private fb: FormBuilder, private store: Store) { }
+
   login() {
-    this.store.dispatch(new Login(this.loginForm.value));
+    if (this.loginForm.valid) {
+      this.store.dispatch(new Login(this.loginForm.value));
+    }
   }
   /*
   //DATOS DE PRUEBA PARA TESTEAR LOGIN
