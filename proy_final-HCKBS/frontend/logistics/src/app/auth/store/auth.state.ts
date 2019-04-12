@@ -27,7 +27,7 @@ import { SetErrors } from 'src/app/error/store/error.actions';
   }
 })
 export class AuthState {
-  constructor(private store: Store, private authService: AuthService) {}
+  constructor(private store: Store, private authService: AuthService) { }
 
   @Action(Login, { cancelUncompleted: true })
   login({ dispatch }: StateContext<Auth>, action: Login) {
@@ -44,7 +44,7 @@ export class AuthState {
   ) {
     patchState({ ...loginResponse });
 
-    dispatch(new Navigate(['/wall']));
+    dispatch(new Navigate(['/user']));
   }
 
   @Action(Register)
@@ -77,11 +77,11 @@ export class AuthState {
   logout({ setState, dispatch }: StateContext<Auth>) {
     this.authService.logout();
     setState(null);
-    dispatch(new Navigate(['/welcome']));
+    dispatch(new Navigate(['/home']));
   }
 
   @Action(RegisterSuccess)
-  registerSuccess(ctx: StateContext<Auth>) {}
+  registerSuccess(ctx: StateContext<Auth>) { }
 
   @Action(UpdateUserProfile, { cancelUncompleted: true })
   updateUserProfile(
