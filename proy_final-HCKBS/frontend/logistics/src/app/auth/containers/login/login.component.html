@@ -1,0 +1,40 @@
+<section fxLayout="column wrap">
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
+    </div>
+    <div class="stit" fxFlexAlign="center">
+      <p>Lo tenemos, lo enviamos</p>
+    </div>
+  </div>
+</section>
+<mat-toolbar>
+  <span>Login de usuario</span>
+</mat-toolbar>
+<mat-card class="logincard">
+  <mat-card-content>
+    <form class="login_form" [formGroup]="loginForm">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Usuario" name="username" formControlName="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Contraseña" type="password" name="password" formControlName="password"
+                required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="login()" color="primary">Iniciar sesión</button>
+  </mat-card-actions>
+  <mat-card-footer>Pablo Logistics SSO - V0.0.1</mat-card-footer>
+</mat-card>

@@ -1,0 +1,47 @@
+<section fxLayout="column wrap">
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
+    </div>
+    <div class="stit" fxFlexAlign="center">
+      <p>Lo tenemos, lo enviamos</p>
+    </div>
+  </div>
+</section>
+<mat-toolbar>
+  <span>Registro de usuario</span>
+</mat-toolbar>
+<mat-card class="my-card">
+  <mat-card-content>
+    <!--datos usuario-->
+    <form class="my-form">
+      <mat-form-field class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Name" name="fname" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Apellido</mat-label>
+        <input matInput placeholder="Last_Name" name="lname" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Dirección</mat-label>
+        <input matInput placeholder="Address" name="address" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Usuario</mat-label>
+        <input matInput placeholder="User" name="user" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" name="email" required>
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput placeholder="Password" name="password" required>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+  </mat-card-actions>
+</mat-card>
