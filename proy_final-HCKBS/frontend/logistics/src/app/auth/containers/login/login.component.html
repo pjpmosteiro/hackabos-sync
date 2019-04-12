@@ -18,14 +18,15 @@
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Usuario" name="username" required>
+              <input matInput placeholder="Usuario" name="username" type="email" required formControlName="email">
             </mat-form-field>
           </td>
         </tr>
         <tr>
           <td>
             <mat-form-field>
-              <input matInput placeholder="Contraseña" type="password" name="password" required>
+              <input matInput placeholder="Contraseña" type="password" name="password" required
+                formControlName="password">
             </mat-form-field>
           </td>
         </tr>
@@ -33,7 +34,7 @@
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="login()" color="primary">Iniciar sesión</button>
+    <button mat-raised-button (ngSubmit)="login()" color="primary">Iniciar sesión</button>
   </mat-card-actions>
   <mat-card-footer>Pablo Logistics SSO - V0.0.1</mat-card-footer>
 </mat-card>

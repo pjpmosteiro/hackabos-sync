@@ -11,7 +11,6 @@ import { Login } from '../../store/auth.actions';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
   loginForm = this.fb.group(
     {
       email: ['', [Validators.required, MailValidator]],
@@ -19,6 +18,7 @@ export class LoginComponent {
     },
     { updateOn: 'blur' }
   );
+
   constructor(private fb: FormBuilder, private store: Store) { }
 
   login() {
