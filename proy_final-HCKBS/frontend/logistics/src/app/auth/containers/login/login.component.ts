@@ -19,7 +19,7 @@ export class LoginComponent {
     { updateOn: 'blur' }
   );
 
-  constructor(private fb: FormBuilder, private store: Store) {}
+  constructor(private fb: FormBuilder, private store: Store) { }
 
   login() {
     if (this.loginForm.valid) {

@@ -8,11 +8,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   login({ email, password }: LoginRequest) {
     return this.http
-      .post<LoginResponse>(`${environment.apiBaseUrl}/account/login`, {
+      .post<LoginResponse>(`${environment.apiBaseUrl}/Users/login`, {
         email,
         password
       })

@@ -3,7 +3,14 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material/material.module";
 import { FlexLayoutModule } from "@angular/flex-layout";
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Store } from '@ngxs/store';
+import { NgxsModule } from '@ngxs/store';
+import { AuthState } from './auth/store/auth.state';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from "./app.component";
@@ -12,8 +19,8 @@ import { HomeComponent } from "./home/home.component";
 import { RoutingModule } from "./routing/routing.module";
 import { HeaderComponent } from "./navigation/header/header.component";
 import { SidenavListComponent } from "./navigation/sidenav-list/sidenav-list.component";
-import { LoginComponent } from './forms/login/login.component';
-import { RegisterComponent } from './forms/register/register.component';
+import { LoginComponent } from './auth/containers/login/login.component';
+import { RegisterComponent } from './auth/containers/register/register.component';
 import { Section1Component } from './home/components/section1/section1.component';
 import { Section2Component } from './home/components/section2/section2.component';
 import { Section3Component } from './home/components/section3/section3.component';
@@ -21,6 +28,15 @@ import { SectionBarComponent } from './home/components/section-bar/section-bar.c
 import { UserComponent } from './pages/user/user.component';
 import { CustomMaterialModule } from "./layout/material/material.module";
 import { ContentComponent } from './home/components/content/content.component';
+
+
+import { AppRoutingModule } from './app-routing.module';
+
+import { environment } from '../environments/environment';
+import { ErrorModule } from './error/error.module';
+import { GlobalState } from './shared/state/global.state';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +61,18 @@ import { ContentComponent } from './home/components/content/content.component';
     FlexLayoutModule,
     RoutingModule,
     CustomMaterialModule,
-    FormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+    NgxsModule.forFeature([AuthState]),
+    NgxsReduxDevtoolsPluginModule.forRoot({
+      disabled: environment.production
+    }),
+    NgxsLoggerPluginModule.forRoot({ logger: console, collapsed: false }),
+    NgxsRouterPluginModule.forRoot(),
+    NgxsModule.forRoot([GlobalState], {
+      developmentMode: !environment.production
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
