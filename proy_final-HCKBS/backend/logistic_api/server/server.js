@@ -6,6 +6,15 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+
+// Anulacion de generacion de tokens de BASE64
+app.use(loopback.token({
+  model: app.models.accessToken,
+  currentUserLiteral: 'me',
+  bearerTokenBase64Encoded: false // here
+}));
+
+
 app.start = function () {
   // start the web server
   return app.listen(function () {

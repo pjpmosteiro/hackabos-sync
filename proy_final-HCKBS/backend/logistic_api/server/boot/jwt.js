@@ -15,7 +15,7 @@ module.exports = function (app) {
     };
 
     User.logout = function (tokenId, fn) {
-        // You may want to implement JWT blacklist here
+        // TODO: Lista negra de jwt
 
         fn();
     };
