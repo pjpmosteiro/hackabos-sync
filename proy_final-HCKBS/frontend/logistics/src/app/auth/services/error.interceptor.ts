@@ -13,7 +13,7 @@ import { AuthService } from './auth.service';
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   intercept(
     request: HttpRequest<any>,
@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
       catchError(error => {
         if (error.status === 401) {
           this.authService.logout();
-          this.router.navigate(['/welcome']);
+          this.router.navigate(['/error']);
         }
         return throwError(error);
       })

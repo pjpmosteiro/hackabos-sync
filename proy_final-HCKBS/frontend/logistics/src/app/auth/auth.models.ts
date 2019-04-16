@@ -40,7 +40,7 @@ export interface LoginResponse {
 }
 
 export interface RegisterRequest {
-  fullName: string;
+  user: string;
   email: string;
   password: string;
 }

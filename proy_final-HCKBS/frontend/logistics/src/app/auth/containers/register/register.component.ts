@@ -14,10 +14,11 @@ import { Register, RegisterSuccess } from '../../store/auth.actions';
 export class RegisterComponent implements OnInit {
   registerForm = this.fb.group(
     {
-      fullName: ['', [Validators.required]],
+      user: ['', [Validators.required]],
       email: ['', [Validators.required, MailValidator]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
+
     },
     {
       updateOn: 'blur',
@@ -29,7 +30,7 @@ export class RegisterComponent implements OnInit {
     private fb: FormBuilder,
     private store: Store,
     private actions$: Actions
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.actions$
