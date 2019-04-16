@@ -27,6 +27,7 @@ module.exports = function (app) {
                 cb(null, { userId: data.id });
             } catch (err) {
                 // ajuste de error para 401 (override)
+                //16/04 -- Anulada verif. de salida : no es capaz de hacer get al token de generación
                 cb();
             }
         } else {
