@@ -7,7 +7,7 @@ var boot = require('loopback-boot');
 var app = module.exports = loopback();
 
 
-// Anulacion de generacion de tokens de BASE64
+// Anulacion de generacion de tokens de BASE64 -- JWT Forzado
 app.use(loopback.token({
   model: app.models.accessToken,
   currentUserLiteral: 'me',
