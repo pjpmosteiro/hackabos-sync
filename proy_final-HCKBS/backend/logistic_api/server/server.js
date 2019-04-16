@@ -1,9 +1,19 @@
+
 'use strict';
 
 var loopback = require('loopback');
 var boot = require('loopback-boot');
 
-var app = (module.exports = loopback());
+var app = module.exports = loopback();
+
+
+// Anulacion de generacion de tokens de BASE64 -- JWT Forzado
+app.use(loopback.token({
+  model: app.models.accessToken,
+  currentUserLiteral: 'me',
+  bearerTokenBase64Encoded: false // here
+}));
+
 
 app.start = function () {
   // start the web server
@@ -18,18 +28,12 @@ app.start = function () {
   });
 };
 
-app.use(
-  loopback.token({
-    model: app.models.accessToken,
-    currentUserLiteral: 'me',
-    bearerTokenBase64Encoded: false, // here
-  })
-);
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname, function (err) {
   if (err) throw err;
 
   // start the server if `$ node server.js`
-  if (require.main === module) app.start();
+  if (require.main === module)
+    app.start();
 });
