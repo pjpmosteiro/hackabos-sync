@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     },
     {
       updateOn: 'blur',
-      validators: [MatchPasswordValidator]
+      /* validators: [MatchPasswordValidator]*/
     }
   );
 
@@ -39,10 +39,11 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
-    if (!this.registerForm.valid) {
+    //Anulado, no recibe password desde validador, check con Yago
+    /*if (!this.registerForm.valid) {
       this.markFormGroupAsTouched(this.registerForm);
       return;
-    }
+    }*/
     this.store.dispatch(new Register(this.registerForm.value));
   }
 
