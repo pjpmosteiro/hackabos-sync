@@ -1,0 +1,13 @@
+body {
+    background-color: lightpink;
+
+}
+ header {
+    padding: 2rem;
+    margin: 2rem;
+    height: 400px;
+    background-color: rgba(0, 0, 255, 0.5);
+    background-image: url(/media/foto.jpg);
+    background-repeat: no-repeat;
+    background-position: 100px 100px;
+ }

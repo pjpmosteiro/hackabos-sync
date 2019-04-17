@@ -1,0 +1,27 @@
+@import "/css/generico_2.css";
+  
+   /*codigo para produto*/
+   /*listado principal*/
+
+
+
+
+   .cards {
+     display: flex;
+     flex-direction: column;
+   }
+.cards article {
+
+
+}
+
+.cards article figure {
+  width: 40%;
+  margin: 0;
+}
+
+.cards header
+
+.cards article header .boton {
+  display: inline;
+}
