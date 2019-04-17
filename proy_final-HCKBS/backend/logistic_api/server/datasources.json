@@ -15,7 +15,7 @@
     "connector": "mongodb"
   },
   "mysql": {
-    "host": "ws.pablojprieto.com.es",
+    "host": "10.24.96.10",
     "port": 3306,
     "url": "",
     "database": "logistic",

@@ -17,8 +17,8 @@
     "id_tracking": {
       "type": "string",
       "required": true
-    },
-    "stat"
+
+    }
   },
   "validations": [],
   "relations": {},

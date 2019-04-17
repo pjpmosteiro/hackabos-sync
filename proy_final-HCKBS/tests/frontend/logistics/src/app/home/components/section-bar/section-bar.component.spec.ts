@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SectionBarComponent } from './section-bar.component';
+import { SectionBar } from './section-bar.component';
 
 describe('SectionBarComponent', () => {
   let component: SectionBarComponent;
@@ -8,13 +8,14 @@ describe('SectionBarComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SectionBarComponent ]
+      declarations: [SectionBarComponent]
+
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SectionBarComponent);
+    fixture = TestBed.createComponent(SectionBar);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

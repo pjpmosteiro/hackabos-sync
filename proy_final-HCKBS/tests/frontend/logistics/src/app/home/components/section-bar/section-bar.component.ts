@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './section-bar.component.html',
   styleUrls: ['./section-bar.component.scss']
 })
+
 export class SectionBarComponent implements OnInit {
 
   constructor() { }
@@ -16,3 +17,5 @@ export class SectionBarComponent implements OnInit {
     console.log(event);
   };
 }
+
+export class Sectionbar { };
