@@ -1,6 +1,16 @@
-<p>
-  tracking works!
-</p>
-<mat-card-actions>
-  <button mat-raised-button (click)="ping()" color="primary">Test</button>
-</mat-card-actions>
+<mat-toolbar>
+  <span>Seguimiento de envios</span>
+</mat-toolbar>
+<mat-card>
+  <mat-card-content>
+    <form class="track" [formGroup]="tracking">
+      <mat-form-field class="full-width">
+        <mat-label>Número de seguimiento</mat-label>
+        <input matInput formControlName="track_number" type="text" required>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
+  </mat-card-actions>
+</mat-card>
