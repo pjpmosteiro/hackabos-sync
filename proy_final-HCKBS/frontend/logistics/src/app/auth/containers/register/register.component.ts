@@ -3,21 +3,22 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { MatchPasswordValidator } from '../../validators/match-pasword.validator';
 import { MailValidator } from '../../validators/mail.validator';
-import { Store, Actions, ofAction } from '@ngxs/store';
-import { Register, RegisterSuccess } from '../../store/auth.actions';
+import { Store } from '@ngxs/store';
+import { Register } from '../../store/auth.actions';
 
 @Component({
   selector: 'sn-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm = this.fb.group(
     {
-      fullName: ['', [Validators.required]],
+      user: ['', [Validators.required]],
       email: ['', [Validators.required, MailValidator]],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]]
+
     },
     {
       updateOn: 'blur',
@@ -28,26 +29,16 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store,
-    private actions$: Actions
-  ) {}
+  ) { }
 
-  ngOnInit() {
-    this.actions$
-      .pipe(ofAction(RegisterSuccess))
-      .subscribe(() => this.registerForm.reset());
-  }
 
   register() {
-    if (!this.registerForm.valid) {
-      this.markFormGroupAsTouched(this.registerForm);
-      return;
+    if (this.registerForm.valid) {
+      this.store.dispatch(new Register(this.registerForm.value));
     }
-    this.store.dispatch(new Register(this.registerForm.value));
-  }
+    else {
+      alert("Datos incorrectos, corrige los fallos y vuelve a intentarlo")
+    }
 
-  markFormGroupAsTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control =>
-      control.markAsTouched()
-    );
   }
 }

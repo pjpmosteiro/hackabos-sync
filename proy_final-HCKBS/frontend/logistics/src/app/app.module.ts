@@ -36,6 +36,7 @@ import { environment } from '../environments/environment';
 import { ErrorModule } from './error/error.module';
 import { GlobalState } from './shared/state/global.state';
 import { SharedModule } from './shared/shared.module';
+import { TrackingComponent } from './pages/tracking/tracking.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { SharedModule } from './shared/shared.module';
     SectionBarComponent,
     UserComponent,
     ContentComponent,
+    TrackingComponent,
   ],
   imports: [
     BrowserModule,

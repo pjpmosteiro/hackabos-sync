@@ -30,9 +30,9 @@ export class AuthService {
       );
   }
 
-  register({ fullName, email, password }) {
-    return this.http.post(`${environment.apiBaseUrl}/account`, {
-      fullName,
+  register({ user, email, password }) {
+    return this.http.post(`${environment.apiBaseUrl}/Users`, {
+      user,
       email,
       password
     });
