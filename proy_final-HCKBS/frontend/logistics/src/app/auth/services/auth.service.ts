@@ -42,6 +42,10 @@ export class AuthService {
     return this.http.get<Auth>(`${environment.apiBaseUrl}/user`);
   }
 
+  getTrackingData() {
+    return this.http.get<Auth>(`${environment.apiBaseUrl}/lg01s`);
+  }
+
   updateUserProfile(profile: Profile) {
     return this.http.put<Profile>(`${environment.apiBaseUrl}/user`, profile);
   }
