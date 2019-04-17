@@ -11,6 +11,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './auth/services/jwt.interceptor';
 
 
 import { AppComponent } from "./app.component";
@@ -54,7 +56,7 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
     SectionBarComponent,
     UserComponent,
     ContentComponent,
-    TrackingComponent,
+    TrackingComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +78,13 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
       developmentMode: !environment.production
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

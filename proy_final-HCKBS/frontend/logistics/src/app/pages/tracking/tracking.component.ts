@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./tracking.component.scss']
 })
 
-export class trackingComponent {
+export class TrackingComponent {
   constructor(public http: HttpClient) { }
   public ping() {
     this.http.get(`${environment.apiBaseUrl}/lg01s`)
