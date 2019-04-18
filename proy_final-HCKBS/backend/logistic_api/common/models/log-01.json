@@ -10,6 +10,14 @@
       "type": "string",
       "required": true
     },
+    "remit": {
+      "type": "string",
+      "required": true
+    },
+    "to": {
+      "type": "string",
+      "required": true
+    },
     "date": {
       "type": "date",
       "required": true
@@ -17,7 +25,6 @@
     "id_tracking": {
       "type": "string",
       "required": true
-
     }
   },
   "validations": [],
