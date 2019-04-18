@@ -4,20 +4,20 @@
       <mat-icon>menu</mat-icon>
     </button>
   </div>
-
-  <div>
-    <a routerLink="/home">Inicio</a>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="center">
-    <h2 routerLink="/">Pablo Logistics | Logística</h2>
+  <div fxFlex fxLayout fxLayoutAlign="left">
+    <h2>Bienvenido, $user</h2>
   </div>
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
     <ul fxLayout fxLayoutGap="15px" class="navigation-items">
       <li>
-        <a routerLink="/login">Iniciar sesion</a>
+        <a routerLink="/new">Nuevo envío</a>
       </li>
       <li>
-        <a routerLink="/register">Registro</a>
+        <a routerLink="/track">Segumiento de envios</a>
+      </li>
+      <li>
+        <a routerLink="/logout">Cerrar sesión
+        </a>
       </li>
     </ul>
   </div>

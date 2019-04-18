@@ -22,7 +22,7 @@ export class RegisterComponent {
     },
     {
       updateOn: 'blur',
-      validators: [MatchPasswordValidator]
+      /* validators: [MatchPasswordValidator]*/
     }
   );
 
@@ -33,12 +33,13 @@ export class RegisterComponent {
 
 
   register() {
-    if (this.registerForm.valid) {
-      this.store.dispatch(new Register(this.registerForm.value));
-    }
-    else {
-      alert("Datos incorrectos, corrige los fallos y vuelve a intentarlo")
-    }
+    //Anulado, no recibe password desde validador, check con Yago
+    /*if (!this.registerForm.valid) {
+      this.markFormGroupAsTouched(this.registerForm);
+      return;
+    }*/
+    this.store.dispatch(new Register(this.registerForm.value));
+  }
 
   }
 }

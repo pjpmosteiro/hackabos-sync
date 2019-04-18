@@ -6,18 +6,20 @@
     "validateUpsert": true
   },
   "properties": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "date": {
-      "type": "date",
-      "required": true
+      "type": "date"
     },
-    "id_tracking": {
+    "remit": {
       "type": "string",
       "required": true
-
+    },
+    "dest": {
+      "type": "string",
+      "required": true
+    },
+    "user": {
+      "type": "number",
+      "required": true
     }
   },
   "validations": [],

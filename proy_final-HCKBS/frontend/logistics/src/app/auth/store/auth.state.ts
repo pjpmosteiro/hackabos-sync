@@ -47,6 +47,12 @@ export class AuthState {
     dispatch(new Navigate(['/user']));
   }
 
+  @Action(LoginFailed)
+  LoginFailed(ctx: StateContext<Auth>) {
+    alert('Usuario o contraseña incorrectos. Inténtelo de nuevo');
+
+  }
+
   @Action(Register)
   register({ dispatch }: StateContext<Auth>, action: Register) {
     return this.authService.register(action.register).pipe(
@@ -81,8 +87,16 @@ export class AuthState {
   }
 
   @Action(RegisterSuccess)
-  registerSuccess(ctx: StateContext<Auth>) { }
+  registerSuccess({ dispatch }, ctx: StateContext<Auth>) {
+    alert('Registro realizado correctamente, ya puede iniciar sesión');
+    dispatch(new Navigate(['/']));
+  }
 
+  @Action(RegisterFailed)
+  registerFailed(ctx: StateContext<Auth>) {
+    alert('Uno o más campos del formulario no se han cubierto correctamente. Inténtelo de nuevo');
+
+  }
   @Action(UpdateUserProfile, { cancelUncompleted: true })
   updateUserProfile(
     { dispatch }: StateContext<Auth>,
@@ -105,8 +119,7 @@ export class AuthState {
   }
 
   @Action([
-    LoginFailed,
-    RegisterFailed,
+
     GetUserProfileFailed,
     UpdateUserProfileFailed
   ])

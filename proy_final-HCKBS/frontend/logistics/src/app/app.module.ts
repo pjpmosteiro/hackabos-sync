@@ -11,6 +11,8 @@ import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsRouterPluginModule } from '@ngxs/router-plugin';
 import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './auth/services/jwt.interceptor';
 
 
 import { AppComponent } from "./app.component";
@@ -37,6 +39,9 @@ import { ErrorModule } from './error/error.module';
 import { GlobalState } from './shared/state/global.state';
 import { SharedModule } from './shared/shared.module';
 import { TrackingComponent } from './pages/tracking/tracking.component';
+import { PrvNavComponent } from './navigation/prv-nav/prv-nav.component';
+import { NewTrackComponent } from './pages/new-track/new-track.component';
+import { LogoutComponent } from './auth/containers/logout/logout.component';
 
 
 @NgModule({
@@ -55,6 +60,9 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
     UserComponent,
     ContentComponent,
     TrackingComponent,
+    PrvNavComponent,
+    NewTrackComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -76,7 +84,13 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
       developmentMode: !environment.production
     }),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
