@@ -39,6 +39,9 @@ import { ErrorModule } from './error/error.module';
 import { GlobalState } from './shared/state/global.state';
 import { SharedModule } from './shared/shared.module';
 import { TrackingComponent } from './pages/tracking/tracking.component';
+import { PrvNavComponent } from './navigation/prv-nav/prv-nav.component';
+import { NewTrackComponent } from './pages/new-track/new-track.component';
+import { LogoutComponent } from './auth/containers/logout/logout.component';
 
 
 @NgModule({
@@ -56,7 +59,10 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
     SectionBarComponent,
     UserComponent,
     ContentComponent,
-    TrackingComponent
+    TrackingComponent,
+    PrvNavComponent,
+    NewTrackComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

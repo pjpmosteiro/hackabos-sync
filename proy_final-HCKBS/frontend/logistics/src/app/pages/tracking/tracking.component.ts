@@ -24,7 +24,7 @@ export class TrackingComponent {
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
   public send() {
-    this.http.get(`${environment.apiBaseUrl}/lg01s`, this.tracking.value)
+    this.http.get(`${environment.apiBaseUrl}/lg01s/`)
       .subscribe(
         data => console.log(data),
         err => console.log(err)
