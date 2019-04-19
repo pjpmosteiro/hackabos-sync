@@ -42,7 +42,6 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
 import { PrvNavComponent } from './navigation/prv-nav/prv-nav.component';
 import { NewTrackComponent } from './pages/new-track/new-track.component';
 import { LogoutComponent } from './auth/containers/logout/logout.component';
-import { NavTest01Component } from './nav-test01/nav-test01.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
@@ -65,8 +64,7 @@ import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, Mat
     TrackingComponent,
     PrvNavComponent,
     NewTrackComponent,
-    LogoutComponent,
-    NavTest01Component
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
