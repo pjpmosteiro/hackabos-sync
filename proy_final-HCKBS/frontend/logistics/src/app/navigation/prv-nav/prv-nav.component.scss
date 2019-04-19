@@ -1,36 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
-
-a {
-    text-decoration: none;
-    color: white;
-}
-
-h2 {
-    text-decoration: none;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: bolder;
-}
-
-
-a:hover, a:active{
-    color: lightgray;
-}
-
-.navigation-items{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-mat-toolbar{
-    border-radius: 2px;
-    background: #4d1410;
-    border-top: none;
-}
-
-@media(max-width: 959px){
-    mat-toolbar{
-        border-radius: 0px;
-    }
-}
+.menu-spacer {
+    flex: 1 1 auto;
+  }
+  
+  mat-toolbar {
+      background: red;
+  }

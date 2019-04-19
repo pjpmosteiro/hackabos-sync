@@ -1,24 +1,27 @@
-<mat-toolbar>
-  <div fxHide.gt-xs>
-    <button mat-icon-button (click)="onToggleSidenav()">
-      <mat-icon>menu</mat-icon>
-    </button>
+<div>
+  <mat-toolbar color="">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Menú de usuario</span>
+      <span class="menu-spacer"></span>
+      <div fxShow="true" fxHide.lt-md>
+        <!--Seccion visible en grande -->
+        <a href="/track" mat-button>Seguimiento de envios </a>
+        <a href="/new" mat-button>Nuevo envío</a>
+        <a href="/logout" mat-button>Cerrar sesión</a>
+
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+        <a (click)="sidenav.toggle()" href="" mat-list-item>Cerrar menú</a>
+        <a href="/track" mat-list-item>Seguimiento de envios </a>
+        <a href="/new" mat-list-item>Nuevo envío</a>
+        <a href="/logout" mat-list-item>Cerrar sesión </a>
+      </mat-nav-list>
+    </mat-sidenav>
   </div>
-  <div fxFlex fxLayout fxLayoutAlign="left">
-    <h2>Bienvenido, $user</h2>
-  </div>
-  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-      <li>
-        <a routerLink="/new">Nuevo envío</a>
-      </li>
-      <li>
-        <a routerLink="/track">Segumiento de envios</a>
-      </li>
-      <li>
-        <a routerLink="/logout">Cerrar sesión
-        </a>
-      </li>
-    </ul>
-  </div>
-</mat-toolbar>
