@@ -41,5 +41,5 @@ export class RegisterComponent {
     this.store.dispatch(new Register(this.registerForm.value));
   }
 
-  }
 }
+
