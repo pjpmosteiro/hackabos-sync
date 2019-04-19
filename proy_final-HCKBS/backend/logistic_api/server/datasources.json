@@ -19,7 +19,7 @@
     "port": 3306,
     "url": "",
     "database": "logistic",
-    "password": "Mosteiro1",
+    "password": "",
     "name": "mysql",
     "user": "logistic",
     "connector": "mysql"
