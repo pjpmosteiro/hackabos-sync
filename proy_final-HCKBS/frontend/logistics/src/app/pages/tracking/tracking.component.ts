@@ -23,19 +23,15 @@ export class TrackingComponent {
 
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
-  public send() {
-    if (this.tracking.value['track_number'] = 0) {
-      alert("error")
-    }
-    else {
-      alert("ok")
-    };/*
-    this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
-        .subscribe(
-          data => console.log(data),
-          err => console.log(err)
-        );*/
-  }
+  public send(req, res) {
 
+    let info = null;
+    this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
+      .subscribe(
+        data => data = info,
+        err => console.log(err)
+      );
+    console.log(info);
+  }
 
 }
