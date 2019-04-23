@@ -29,9 +29,10 @@ export class TrackingComponent {
 
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
-        data => this.track$ = data,
+        data => res.json.data,
         err => console.log(err)
       );
+    alert(this.track$);
     console.log(this.track$);
   }
 
