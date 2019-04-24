@@ -3,15 +3,15 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { MatchPasswordValidator } from '../../validators/match-pasword.validator';
 import { MailValidator } from '../../validators/mail.validator';
-import { Store, Actions, ofAction } from '@ngxs/store';
-import { Register, RegisterSuccess } from '../../store/auth.actions';
+import { Store } from '@ngxs/store';
+import { Register } from '../../store/auth.actions';
 
 @Component({
   selector: 'sn-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
   registerForm = this.fb.group(
     {
       user: ['', [Validators.required]],
@@ -29,14 +29,8 @@ export class RegisterComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private store: Store,
-    private actions$: Actions
   ) { }
 
-  ngOnInit() {
-    this.actions$
-      .pipe(ofAction(RegisterSuccess))
-      .subscribe(() => this.registerForm.reset());
-  }
 
   register() {
     //Anulado, no recibe password desde validador, check con Yago
@@ -47,9 +41,5 @@ export class RegisterComponent implements OnInit {
     this.store.dispatch(new Register(this.registerForm.value));
   }
 
-  markFormGroupAsTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control =>
-      control.markAsTouched()
-    );
-  }
 }
+

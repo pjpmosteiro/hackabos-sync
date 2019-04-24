@@ -18,6 +18,12 @@ export interface Friend {
   rejectedAt: number;
 }
 
+export interface Track {
+  remit: string;
+  dest: string;
+  id: string;
+}
+
 export interface Preferences {
   isPublicProfile: boolean;
   linkedIn?: string;

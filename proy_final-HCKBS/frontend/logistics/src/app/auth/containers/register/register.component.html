@@ -9,31 +9,43 @@
   </div>
 </section>
 <mat-toolbar>
-  <span>Registro de usuario</span>
+  <span>Alta de usuario</span>
 </mat-toolbar>
-<mat-card>
+<mat-card class="registercard">
   <mat-card-content>
-    <!--datos usuario-->
-    <form class="my-form" [formGroup]="registerForm" (ngSubmit)="register()">
-      <mat-form-field class="full-width">
-        <mat-label>Usuario</mat-label>
-        <input matInput placeholder="User" name="user" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Email</mat-label>
-        <input matInput type="email" placeholder="Email" formControlName="email" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput type="password" placeholder="Password" formControlName="password" required>
-      </mat-form-field>
-      <mat-form-field class="full-width">
-        <mat-label>Confirmar contraseña</mat-label>
-        <input matInput type="password" placeholder="Confirm password" formControlName="confirmPassword" required>
-      </mat-form-field>
+    <form class="register_form" [formGroup]="registerForm">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Usuario" name="username" formControlName="user" required>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="E-Mail" name="email" formControlName="email" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Contraseña" type="password" name="password" formControlName="password"
+                required>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Confirmar contraseña" type="password" name="confirmpassword"
+                formControlName="confirmPassword" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
     </form>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button (click)="register()" color="primary">REGISTER</button>
+    <button mat-raised-button (click)="register()" color="primary">Registro</button>
   </mat-card-actions>
+  <mat-card-footer>Pablo Logistics SSO - V0.0.1</mat-card-footer>
 </mat-card>

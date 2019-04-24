@@ -39,6 +39,11 @@ import { ErrorModule } from './error/error.module';
 import { GlobalState } from './shared/state/global.state';
 import { SharedModule } from './shared/shared.module';
 import { TrackingComponent } from './pages/tracking/tracking.component';
+import { PrvNavComponent } from './navigation/prv-nav/prv-nav.component';
+import { NewTrackComponent } from './pages/new-track/new-track.component';
+import { LogoutComponent } from './auth/containers/logout/logout.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 
 
 @NgModule({
@@ -56,7 +61,10 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
     SectionBarComponent,
     UserComponent,
     ContentComponent,
-    TrackingComponent
+    TrackingComponent,
+    PrvNavComponent,
+    NewTrackComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +85,12 @@ import { TrackingComponent } from './pages/tracking/tracking.component';
     NgxsModule.forRoot([GlobalState], {
       developmentMode: !environment.production
     }),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
   ],
   providers: [
     {
