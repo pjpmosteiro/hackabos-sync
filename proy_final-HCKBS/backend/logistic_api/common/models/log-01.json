@@ -11,15 +11,15 @@
     },
     "remit": {
       "type": "string",
-      "required": true
+      
     },
     "dest": {
       "type": "string",
-      "required": true
+     
     },
     "user": {
       "type": "number",
-      "required": true
+     
     }
   },
   "validations": [],
