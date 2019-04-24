@@ -10,16 +10,15 @@
       "type": "date"
     },
     "remit": {
-      "type": "string",
-      "required": true
+      "type": "string"
+      
     },
     "dest": {
-      "type": "string",
-      "required": true
+      "type": "string"
+     
     },
     "user": {
-      "type": "number",
-      "required": true
+      "type": "number"     
     }
   },
   "validations": [],
