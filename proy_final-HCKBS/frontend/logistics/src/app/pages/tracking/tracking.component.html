@@ -20,18 +20,18 @@
       <form class="track" [formGroup]="tracking">
         <mat-form-field class="full-width">
           <mat-label>Número de seguimiento</mat-label>
-          <input matInput formControlName="track_number" type="text" required>
+          <input matInput formControlName="track_number" type="text" ng-model="trackn" required>
         </mat-form-field>
         <p>Datos de prueba: 5cb7c717368c2e3d1a510ef0</p>
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
+      <button mat-raised-button (click)="send()" color="primary" ng-disabled="!(!!trackn)">Consultar envio</button>
     </mat-card-actions>
   </mat-card>
 </section>
 <mat-card>
-  <mat-card-content>{{datos_front}}</mat-card-content>
+  <mat-card-content>{{datos_front$}}</mat-card-content>
 </mat-card>
 <section>
 </section>

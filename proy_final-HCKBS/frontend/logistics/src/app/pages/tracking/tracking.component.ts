@@ -25,6 +25,7 @@ export class TrackingComponent {
 
   datos: any;
   public send() {
+
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
         data => this.datos = data,
@@ -36,11 +37,12 @@ export class TrackingComponent {
 
 
     console.log(this.datos);
-    // Forzar resolucion en 2 segundos
-    let datos_front = (this.datos.remit);
 
 
-  }
+  };
 
+
+  datos_front$ = (this.datos);
 }
+
 /*${this.datos.remit}*/
