@@ -24,9 +24,7 @@ export class TrackingComponent {
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
   datos: any;
-
-  public send(req, res) {
-
+  public send() {
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
         data => this.datos = data,
@@ -35,7 +33,14 @@ export class TrackingComponent {
     alert(`Numero de seguimiento: ${this.datos.id}`);
     alert(`Remitente: ${this.datos.remit}`);
     alert(`Destinatario: ${this.datos.dest}`);
+
+
     console.log(this.datos);
+    // Forzar resolucion en 2 segundos
+    let datos_front = (this.datos.remit);
+
+
   }
 
 }
+/*${this.datos.remit}*/
