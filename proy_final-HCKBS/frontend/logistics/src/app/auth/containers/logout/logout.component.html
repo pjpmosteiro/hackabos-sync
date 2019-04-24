@@ -8,12 +8,18 @@
     </div>
   </div>
 </section>
-<mat-card-header>
-  <span>Cierre de sesión</span>
-</mat-card-header>
-<mat-card-subtitle>
-  <p>Está seguro?</p>
-</mat-card-subtitle>
-<mat-card-actions>
-  <button mat-raised-button (click)="logout()" color="primary">Seguro, cerrar sesión</button>
-</mat-card-actions>
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+<!-- Parte unica-->
+<mat-card>
+  <mat-card-content>
+    <mat-toolbar>
+      <span>Cierre de sesión</span>
+    </mat-toolbar>
+
+    <p>Está seguro?</p>
+    <mat-card-actions>
+      <button mat-raised-button (click)="logout()" color="primary">Seguro, cerrar sesión</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

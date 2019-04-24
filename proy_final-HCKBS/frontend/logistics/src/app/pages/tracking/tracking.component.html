@@ -1,3 +1,16 @@
+<section fxLayout="column wrap">
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
+    </div>
+    <div class="stit" fxFlexAlign="center">
+      <p>Lo tenemos, lo enviamos</p>
+    </div>
+  </div>
+</section>
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+<!-- Parte unica-->
 <mat-toolbar>
   <span>Seguimiento de envios</span>
 </mat-toolbar>
@@ -14,4 +27,5 @@
     <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
   </mat-card-actions>
 </mat-card>
+
 <!-- Resultado de la consulta -->
