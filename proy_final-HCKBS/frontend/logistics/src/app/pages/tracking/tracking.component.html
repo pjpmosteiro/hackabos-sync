@@ -13,7 +13,7 @@
 <!-- Parte unica-->
 <section>
   <mat-toolbar>
-    <span>Seguimiento de envios</span>
+   <mat-icon>my_location</mat-icon> <span>Seguimiento de envios</span>
   </mat-toolbar>
   <mat-card>
     <mat-card-content>
@@ -26,14 +26,24 @@
       </form>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button (click)="send()" color="primary" ng-disabled="!(!!trackn)">Consultar envio</button>
+      <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
     </mat-card-actions>
+   
   </mat-card>
 </section>
-<mat-card>
-  <mat-card-content>{{datos_front$}}</mat-card-content>
-</mat-card>
-<section>
-</section>
+
+
 
 <!-- Resultado de la consulta -->
+<mat-card>
+  <mat-card-content>
+    <p> Remitente: {{ datos?.remit}}
+    </p>
+    <p> Destinatario: {{ datos?.dest}}
+    </p>
+    <p> Codigo de seguimiento: {{ datos?.id}}
+    </p>
+    <p> Estado: {{ datos?.user}}
+    </p>
+  </mat-card-content>
+</mat-card>
