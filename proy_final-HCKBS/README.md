@@ -7,7 +7,4 @@ En este repositorio se cargarán los datos del proyecto a medida que se vayan ge
 -> Los servicios estan desplegados en modo dev, puedes testear el front, pero no el backend. 
 Frontend: logistics.redp.icu
 
-### Repo de commits beta
-Que quiere deicir? Que lo que se cargue aqui no es necesariamente funcional. Para consultar las build nightly. usar branch pr_final. Builds beta, branch master. Builds stable, repositorio (https://github.com/pjpmosteiro/proy_final-HCKBS)
-
 Como siempre, contenido bajo la licencia CC NC-BY-SA 3.0
