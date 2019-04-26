@@ -18,7 +18,8 @@
   <div>
     <mat-sidenav #sidenav>
       <mat-nav-list>
-        <a (click)="sidenav.toggle()" href="" mat-list-item>Cerrar menú</a>
+        <a (click)="sidenav.toggle()"  mat-list-item>Cerrar menú</a>
+        <a routerLink="/user" mat-list-item>Gestión de Usuario </a>
         <a routerLink="/track" mat-list-item>Seguimiento de envios </a>
         <a routerLink="/new" mat-list-item>Nuevo envío</a>
         <a routerLink="/logout" mat-list-item>Cerrar sesión </a>
