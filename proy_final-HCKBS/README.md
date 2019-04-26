@@ -1,4 +1,5 @@
 # Repositorio del Proyecto final de Hack A Bos de Pablo
+# Fase: STABLE
 En este repositorio se cargarán los datos del proyecto a medida que se vayan generando.
 ### Seguimiento
 -> Puedes hacer seguimiento del proyecto en https://www.notion.so/l3x/f57d8777e0744e228d7291dc742e60fe?v=cc66379442b645a09177afa55d186fe2
