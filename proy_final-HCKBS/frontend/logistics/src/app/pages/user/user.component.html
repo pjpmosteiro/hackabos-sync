@@ -11,9 +11,19 @@
 <!-- Navegacion privada-->
 <app-prv-nav></app-prv-nav>
 <!-- Parte unica-->
-<p>
-  user works!
-</p>
-<p> Si ves esto, es que el login funciona!</p>
-<a href="/logout"> <button mat-raised-button color="primary">Cerrar sesión</button>
-</a>
+
+<mat-card>
+  <mat-icon>perm_identity</mat-icon>
+  <mat-toolbar>
+    <span>Bienvenido, {{user || user}}</span>
+  </mat-toolbar>
+  <mat-card-content>
+    <p>
+      user works!
+    </p>
+    <p> Si ves esto, es que el login funciona!</p>
+    <a href="/logout"> <button mat-raised-button color="primary">Cerrar sesión</button>
+    </a>
+
+  </mat-card-content>
+</mat-card>

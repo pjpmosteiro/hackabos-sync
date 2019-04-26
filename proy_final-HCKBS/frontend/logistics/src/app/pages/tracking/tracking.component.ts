@@ -31,6 +31,7 @@ export class TrackingComponent {
         data => this.data = data,
         err => console.log(err)
       );
+<<<<<<< Updated upstream
     alert(`Numero de seguimiento: ${this.data.id}`);
     alert(`Remitente: ${this.data.remit}`);
     alert(`Destinatario: ${this.data.dest}`);
@@ -39,10 +40,9 @@ export class TrackingComponent {
     console.log(this.datos);
 
 
+=======
+>>>>>>> Stashed changes
   };
-
-
-  datos_front$ = (this.datos);
 }
 
 /*${this.datos.remit}*/
