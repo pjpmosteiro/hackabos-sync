@@ -1,0 +1,71 @@
+@import 'normalize.css';
+
+html {
+    background-color: rebeccapurple;
+    color: white;
+    font-family: arial;
+    text-align: center;
+}
+
+.container main {
+    display: flex;
+    justify-content: inherit;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-width: 300px;
+    min-height: 100vh;
+}
+
+.container header {
+    display: flex;
+    font-size: 1.5rem;
+    justify-content: flex-start;
+    flex-direction: column;
+
+}
+
+body main section {
+    display:flex;
+    flex-direction: column;
+    align-content: center;
+    max-width: 500px;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.6rem;
+}
+
+
+.container nav ul li {
+    display:inline;
+    margin: 1rem;
+    text-align: center;
+    margin: 0 1rem;
+}
+
+.container nav ul li a {
+    color:white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.container nav ul li:nth-child(1) {
+    background-color: #50e3c2;
+    padding: 15px;
+    padding-left: 90px;
+    padding-right: 90px;
+}
+
+.container nav ul li.l2{
+    background: orange;
+    padding: 15px;
+    padding-left: 90px;
+    padding-right: 90px;
+    
+}
+.container footer {
+    display: flex;
+    justify-content: flex-end;
+
+}

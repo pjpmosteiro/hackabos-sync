@@ -1,0 +1,78 @@
+a {
+}
+a:visited {
+    color: red;
+    background-color: yellow;
+}
+
+a:hover {
+    font-size: 1.4rem;
+}
+
+input[type="checkbox"] {
+    margin-left: 1rem;
+}
+
+input[type="checkbox"]:checked {
+    margin-left: 0;
+    box-shadow: 2px 2px 2px red;
+}
+
+
+
+.colorincho li:first-child {
+background: orange;
+}
+
+.colorincho li:last-child {
+    background: green;
+  }
+  
+.colorincho li:nth-child(2) {
+    background: lightseagreen;
+  }
+
+.raias li:nth-child(even) {
+    background: lightseagreen;
+}
+
+.raias li:nth-child(odd) {
+    background: lightcoral;
+}
+
+.raias li:not(:first-child) {
+    font-size:2rem;
+}
+
+.raias li:not(.guai) {
+    color:white;
+}
+
+#elementos h2 {
+    color: royalblue;
+}
+
+#elementos h2::first-letter {
+    font-size: 3rem;
+    color:red;
+}
+
+#elementos p {
+    font-family: sans-serif;
+}
+
+#elementos p::first-line {
+    font-size: 1.5rem;
+    color: blue;
+}
+
+#elementos p::selection {
+    background:red;
+}
+.colorincho a[href^="http"]::after{
+    content: "💃";
+    font-size: 3rem;
+    color: gray;
+    font-weight: bold;
+}
+
