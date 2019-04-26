@@ -1,3 +1,49 @@
-<p>
-  tracking works!
-</p>
+<section fxLayout="column wrap">
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
+    </div>
+    <div class="stit" fxFlexAlign="center">
+      <p>Lo tenemos, lo enviamos</p>
+    </div>
+  </div>
+</section>
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+<!-- Parte unica-->
+<section>
+  <mat-toolbar>
+   <mat-icon>my_location</mat-icon> <span>Seguimiento de envios</span>
+  </mat-toolbar>
+  <mat-card>
+    <mat-card-content>
+      <form class="track" [formGroup]="tracking">
+        <mat-form-field class="full-width">
+          <mat-label>Número de seguimiento</mat-label>
+          <input matInput formControlName="track_number" type="text" ng-model="trackn" required>
+        </mat-form-field>
+        <p>Datos de prueba: 5cb7c717368c2e3d1a510ef0</p>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
+    </mat-card-actions>
+   
+  </mat-card>
+</section>
+
+
+
+<!-- Resultado de la consulta -->
+<mat-card>
+  <mat-card-content>
+    <p> Remitente: {{ datos?.remit}}
+    </p>
+    <p> Destinatario: {{ datos?.dest}}
+    </p>
+    <p> Codigo de seguimiento: {{ datos?.id}}
+    </p>
+    <p> Estado: {{ datos?.user}}
+    </p>
+  </mat-card-content>
+</mat-card>
