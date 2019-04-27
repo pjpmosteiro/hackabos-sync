@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, FormBuilder, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
@@ -23,12 +22,12 @@ export class TrackingComponent {
 
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
-  data: any;
+  datos: any;
   public send() {
 
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
-        data => this.data = data,
+        data => this.datos = data,
         err => console.log(err)
       );
   };

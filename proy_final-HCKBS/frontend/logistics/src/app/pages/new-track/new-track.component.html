@@ -1,14 +1,58 @@
 <section fxLayout="column wrap">
-    <div class="header">
-      <div class="tit" fxFlexAlign="center">
-        <p>Pablo Logistics</p>
-      </div>
-      <div class="stit" fxFlexAlign="center">
-        <p>Lo tenemos, lo enviamos</p>
-      </div>
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
     </div>
-  </section>
-  <!-- Navegacion privada-->
-  <app-prv-nav></app-prv-nav>
-  <!-- Parte unica-->
- 
+    <div class="stit" fxFlexAlign="center">
+      <p>Lo tenemos, lo enviamos</p>
+    </div>
+  </div>
+</section>
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+
+<!-- Parte unica-->
+<mat-card class="logincard">
+  <mat-toolbar>
+    <mat-icon>add_shopping_cart</mat-icon> <span>Nuevo envío</span>
+  </mat-toolbar>
+  <mat-card-content>
+    <form class="newtrack-form" [formGroup]="new_tracking">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-card-header>
+              <span>Remitente</span>
+            </mat-card-header>
+            <mat-form-field>
+              <input matInput placeholder="Dirección de remitente" name="remit" formControlName="raddress" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-card-header>
+          <span>Destinatario</span>
+        </mat-card-header>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Dirección de destinatario" name="dest" formControlName="dadresss" required>
+            </mat-form-field>
+          </td>
+        </tr>
+        <mat-card-header>
+          <span>Nº de Cliente</span>
+        </mat-card-header>
+        <tr>
+          <td>
+            <mat-form-field>
+              <input matInput placeholder="Número de cliente" name="ncli" formControlName="nclient" required>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="create()" color="primary">Generar envío</button>
+  </mat-card-actions>
+</mat-card>
