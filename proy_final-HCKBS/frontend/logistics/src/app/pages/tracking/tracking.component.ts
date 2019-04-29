@@ -22,9 +22,7 @@ export class TrackingComponent {
 
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
-
-  data: any;
-
+  datos: any;
   public send() {
 
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
@@ -36,4 +34,3 @@ export class TrackingComponent {
 }
 
 /*${this.datos.remit}*/
-
