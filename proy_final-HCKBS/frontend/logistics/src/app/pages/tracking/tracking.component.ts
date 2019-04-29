@@ -1,12 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsModule, FormBuilder, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
-import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { AuthService } from 'src/app/auth/services/auth.service';
-import { ofActionSuccessful } from '@ngxs/store';
-import { getTrackingData } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-tracking',
@@ -26,17 +22,15 @@ export class TrackingComponent {
 
   constructor(private fb: FormBuilder, public http: HttpClient) { }
 
-
-  data: any;
+  datos: any;
   public send() {
 
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
-        data => this.data = data,
+        data => this.datos = data,
         err => console.log(err)
       );
   };
 }
 
 /*${this.datos.remit}*/
-

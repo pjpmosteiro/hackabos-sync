@@ -1,5 +1,5 @@
 <div>
-  <mat-toolbar color="">
+  <mat-toolbar class="nav1">
     <mat-toolbar-row>
       <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
         <mat-icon>menu</mat-icon>
@@ -15,14 +15,14 @@
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
-  <div>
-    <mat-sidenav #sidenav>
-      <mat-nav-list>
-        <a (click)="sidenav.toggle()"  mat-list-item>Cerrar menú</a>
-        <a routerLink="/user" mat-list-item>Gestión de Usuario </a>
-        <a routerLink="/track" mat-list-item>Seguimiento de envios </a>
-        <a routerLink="/new" mat-list-item>Nuevo envío</a>
-        <a routerLink="/logout" mat-list-item>Cerrar sesión </a>
-      </mat-nav-list>
-    </mat-sidenav>
-  </div>
+</div>
+<div class="nav2">
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a (click)="sidenav.toggle()" mat-list-item>Cerrar menú</a>
+      <a routerLink="/user" mat-list-item>Gestión de Usuario </a>
+      <a routerLink="/track" mat-list-item>Seguimiento de envios </a>
+      <a routerLink="/new" mat-list-item>Nuevo envío</a>
+      <a routerLink="/logout" mat-list-item>Cerrar sesión </a>
+    </mat-nav-list>
+  </mat-sidenav>
