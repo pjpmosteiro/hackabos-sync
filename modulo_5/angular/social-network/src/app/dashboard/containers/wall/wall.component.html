@@ -1,0 +1,13 @@
+<sn-publisher
+  [user]="currentUser$ | async"
+  (publish)="publishPost($event)"
+  placeholder="What are you thinking motherfucker?"
+></sn-publisher>
+
+<sn-errors> </sn-errors>
+
+<ng-container *ngIf="(currentUser$ | async) as currentUser">
+  <ng-container *ngFor="let item of (posts$ | async)">
+    <sn-post [post]="item" [user]="currentUser"></sn-post>
+  </ng-container>
+</ng-container>
