@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+  }
+  
+  .container {
+    background: rebeccapurple;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .container ul li {
+    background: yellow;
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
