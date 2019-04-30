@@ -1,0 +1,24 @@
+<section fxLayout="column wrap">
+  <div class="header">
+    <div class="tit" fxFlexAlign="center">
+      <p>Pablo Logistics</p>
+    </div>
+    <div class="stit" fxFlexAlign="center">
+      <p>Control de envios</p>
+    </div>
+  </div>
+</section>
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+<!-- Parte unica-->
+
+<mat-card>
+  <mat-toolbar>
+    <mat-icon>perm_identity</mat-icon> <span>Bienvenido, {{user || user}}</span>
+  </mat-toolbar>
+  <mat-card-content>
+    <p> Por favor, seleccione una opcion del menú.</p>
+    <a routerLink="/logout"> <button mat-raised-button color="primary">Cerrar sesión</button>
+    </a>
+  </mat-card-content>
+</mat-card>
