@@ -13,7 +13,7 @@
 <!-- Parte unica-->
 <section>
   <mat-toolbar>
-   <mat-icon>my_location</mat-icon> <span>Seguimiento de envios</span>
+    <mat-icon>my_location</mat-icon> <span>Seguimiento de envios</span>
   </mat-toolbar>
   <mat-card>
     <mat-card-content>
@@ -28,7 +28,7 @@
     <mat-card-actions>
       <button mat-raised-button (click)="send()" color="primary">Consultar envio</button>
     </mat-card-actions>
-   
+
   </mat-card>
 </section>
 
@@ -43,7 +43,7 @@
     </p>
     <p> Codigo de seguimiento: {{ datos?.id}}
     </p>
-    <p> Estado: {{ datos?.user}}
+    <p> Estado: {{ datos?.state}}
     </p>
   </mat-card-content>
 </mat-card>
