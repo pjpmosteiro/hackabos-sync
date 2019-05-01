@@ -1,0 +1,64 @@
+<!-- Navegacion privada-->
+<app-prv-nav></app-prv-nav>
+<!-- Parte unica-->
+
+<mat-card class="edit_track">
+  <mat-toolbar>
+    <mat-icon>add_shopping_cart</mat-icon> <span>Gestión de envios</span>
+  </mat-toolbar>
+  <mat-card-content>
+    <form class="edittrack-form" [formGroup]="edit_tracking">
+      <table cellspacing="0">
+        <tr>
+          <td>
+            <mat-card-header>
+              <span>Nº de seguimiento</span>
+            </mat-card-header>
+            <mat-form-field>
+              <input matInput placeholder="Nº de envío/seguimiento" name="track" formControlName="id" required>
+            </mat-form-field>
+            <mat-card-actions> <button mat-raised-button (click)="get()" color="primary">Cargar
+                envio</button></mat-card-actions>
+            <mat-card-header>
+              <span>Nuevo estado</span>
+            </mat-card-header>
+            <mat-form-field>
+              <input matInput placeholder="Nuevo estado" name="newstate" formControlName="status"
+                value="{{ data1?.status}}" required>
+            </mat-form-field>
+            <mat-card-header>
+              <span>Remitente</span>
+            </mat-card-header>
+            <mat-form-field>
+              <input matInput placeholder="Dirección de remitente" name="remit" formControlName="remit"
+                value="{{ data1?.remit}}" required>
+            </mat-form-field>
+            <mat-card-header>
+              <span>Destinatario</span>
+            </mat-card-header>
+            <mat-form-field>
+              <input matInput placeholder="Dirección de destinatario" name="dest" formControlName="dest"
+                value="{{ data1?.dest}}" required>
+            </mat-form-field>
+
+
+      </table>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="send()" color="primary">Modificar envío</button>
+  </mat-card-actions>
+</mat-card>
+
+<mat-card class="data">
+  <mat-card-content>
+    <p> Remitente: {{ data1?.remit}}
+    </p>
+    <p> Destinatario: {{ data1?.dest}}
+    </p>
+    <p> Codigo de seguimiento: {{ data1?.id}}
+    </p>
+    <p> Estado: {{ data1?.status}}
+    </p>
+  </mat-card-content>
+</mat-card>
