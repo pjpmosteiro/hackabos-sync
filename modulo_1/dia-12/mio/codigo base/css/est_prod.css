@@ -1,0 +1,128 @@
+@import "normalize.css";
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  img {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  main > section {
+    margin: 1rem;
+  }
+
+  /*clase de base*/
+.boton {
+    background-color: lightskyblue;
+    text-decoration: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    display: block;
+  }
+  
+  .boton:hover {
+    color: black;
+    background-color: lightcyan;
+  }
+  
+
+  .main-page-header {
+    display: none;
+    text-align: center;
+  } 
+
+  /* cabecera*/ 
+
+  header.main-header {
+    background: gray;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header.main-header h1 {
+    margin: 0;
+    color: white;
+    text-align: center;
+  }
+  
+  header.main-header ul {
+    display: flex;
+    list-style-type: none;
+    margin: 1rem 0;
+    padding: 0;
+  }
+  
+  header.main-header .boton {
+    margin: 0 1rem;
+  }
+  * Footer */
+
+  footer.main-footer {
+    background-color: lightgray;
+    padding: 1rem;
+  }
+  
+  footer.main-footer > p:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  footer.main-footer nav {
+    display: flex;
+  }
+  
+  footer.main-footer nav > * {
+    flex-basis: 50%;
+  }
+  
+  footer.main-footer nav a {
+    color: lightskyblue;
+    text-decoration: none;
+  }
+  
+  @media (min-width: 800px) {
+    body > div.container {
+      display: flex;
+    }
+  
+    .main-header {
+      min-width: 250px;
+    }
+  
+    .main-header nav {
+      width: 100%;
+    }
+  
+    .main-header nav ul {
+      flex-direction: column;
+    }
+  
+    .main-header nav ul li {
+      margin: 0.3rem 0;
+      text-align: center;
+    }
+  
+    .main-page-header {
+      display: block;
+    }
+  
+    footer.main-footer nav {
+      flex-direction: column;
+    }
+  
+    footer.main-footer nav ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+  
+    footer.main-footer nav ul li {
+      margin-right: 1rem;
+    }
+  }

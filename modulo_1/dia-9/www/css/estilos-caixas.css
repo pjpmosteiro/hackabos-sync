@@ -1,0 +1,28 @@
+.un {
+    background: lightpink;
+    width: 50%;
+    height: 300px;
+    font-size: 2rem;
+    overflow: auto;
+    margin: 0 auto;
+    max-width: 400px;
+    min-width: 200px;
+    display: inline;
+  }
+  
+  .tres strong {
+    background: green;
+    color: white;
+    border: 2px solid red;
+    padding: 2px;
+    display: block;
+  }
+  
+  ul li a {
+    background:blue;
+    color: white;
+    padding: 5px;
+    margin: 4px;
+    display: inline-block;
+
+    }

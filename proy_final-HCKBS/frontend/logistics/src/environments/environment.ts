@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://api.logistics.redp.icu:3000/api'
+  apiBaseUrl: 'http://backend.int.redp.icu:3000/api'
 };
 
 /*
