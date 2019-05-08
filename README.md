@@ -5,7 +5,7 @@
 Por favor, se ético. No te atribuyas el trabajo de otros | Please, be ethic. Don't own the work of others
 ----------------------------
 ## Nota:
-Debido a cierto requisito de última hora, **y en contra del criterio del programador**, los servidores de deploy de backend están fuera de servicio a la espera de ser reescritos. Perdón por las molestias.
+Debido a cierto requisito de última hora, **y en contra del criterio del programador**, los servidores de deploy de backend están fuera de servicio a la espera de ser reescritos. Debido a ello, el frontend también ha quedado anulado para evitar malfuncionamientos. Perdón por las molestias.
 
 ----------------------------------------
 ## Indice del repositorio
