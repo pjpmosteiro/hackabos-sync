@@ -3,11 +3,19 @@
 ### Este repositorio es inestable, el código se sube a partes y no es funcional. | This repository is unstable, the code is commited "by the way" and is not ready. 
 
 Por favor, se ético. No te atribuyas el trabajo de otros | Please, be ethic. Don't own the work of others
+
 ----------------------------
-## Nota:
+## Nota: 
 Debido a cierto requisito de última hora, **y en contra del criterio del programador**, los servidores de deploy de backend están fuera de servicio a la espera de ser reescritos. Debido a ello, el frontend también ha quedado anulado para evitar malfuncionamientos. Perdón por las molestias.
 
 ----------------------------------------
+## Urls de despliege:
+Puedes encontrar el proyecto desplegado en:  
+- logistics.redp.icu
+- pda.logistics.redp.icu
+- api.logistics.redp.icu
+
+-----------------------------------------
 ## Indice del repositorio
 .- Rama master: https://github.com/pjpmosteiro/hackabos-sync
   .- Modulos 1, 2, 3, 4, 5 y proyecto final en fase stable
