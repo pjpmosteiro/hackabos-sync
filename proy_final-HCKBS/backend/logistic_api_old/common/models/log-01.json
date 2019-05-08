@@ -1,0 +1,37 @@
+{
+  "name": "lg01",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "date": {
+      "type": "date"
+    },
+    "remit": {
+      "type": "string"
+    },
+    "dest": {
+      "type": "string"
+    },
+    "user": {
+      "type": "number"
+    },
+    "status": {
+      "type": "string",
+      "default": "Registrado"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$unauthenticated",
+      "permission": "DENY"
+    }
+  ],
+  "methods": {}
+}

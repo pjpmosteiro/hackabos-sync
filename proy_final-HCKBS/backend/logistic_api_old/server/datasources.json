@@ -1,0 +1,27 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory",
+    "file": "users.json"
+  },
+  "mongoDB": {
+    "host": "cluster0-3qi3i.gcp.mongodb.net",
+    "port": 27017,
+    "url": "mongodb+srv://lex:Mosteiro1@cluster0-3qi3i.gcp.mongodb.net/logistic",
+    "database": "lg01",
+    "password": "Mosteiro1",
+    "name": "mongoDB",
+    "user": "lex",
+    "connector": "mongodb"
+  },
+  "mysql": {
+    "host": "10.24.96.10",
+    "port": 3306,
+    "url": "",
+    "database": "logistic",
+    "password": "Mosteiro1",
+    "name": "mysql",
+    "user": "logistic",
+    "connector": "mysql"
+  }
+}
