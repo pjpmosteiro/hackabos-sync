@@ -1,0 +1,22 @@
+{
+  "ids": {
+    "User": 6,
+    "AccessToken": 8,
+    "ACL": 1,
+    "RoleMapping": 1,
+    "Role": 1
+  },
+  "models": {
+    "User": {
+      "1": "{\"realm\":\"string\",\"username\":\"test\",\"password\":\"$2a$10$JRBqJL.v9sHJ1gQYB9uH1.QRw.JnP3WnD0GdmN1IG18rtf1xe5t/m\",\"email\":\"p@p.com\",\"emailVerified\":true,\"id\":1}",
+      "2": "{\"username\":\"tiopepe\",\"password\":\"$2a$10$FvHQVbZ7k4EVDMJaN7Ihv.pmfXF7Fa7o0jFhUNWXcFb6BDJBOhTgy\",\"email\":\"p2@p.com\",\"emailVerified\":false,\"id\":2}",
+      "3": "{\"password\":\"$2a$10$ZGWtOWvd1Fg2R3cwirQWKeund/Obzolehsa7yWXqKxgrAKbCpFZMu\",\"email\":\"pepeto2@gmail.com\",\"user\":\"\",\"id\":3}",
+      "4": "{\"password\":\"$2a$10$z9JsrqWkkSHjdOJHmoi5vOc0HhQo.nlsn1Z/fxgJ9aihLb9s2KfN6\",\"email\":\"p2p2p2@p2p2p2.com\",\"user\":\"pepep\",\"id\":4}",
+      "5": "{\"password\":\"$2a$10$cbqPO7nMgnSePMR66KuhquI0zcEHEHUcPyh5jbROkY6HfO.XMiG92\",\"email\":\"luisito@luisito.com\",\"user\":\"luisito_comunica\",\"id\":5}"
+    },
+    "AccessToken": {},
+    "ACL": {},
+    "RoleMapping": {},
+    "Role": {}
+  }
+}
