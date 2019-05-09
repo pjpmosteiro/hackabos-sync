@@ -44,7 +44,7 @@ app.use(function (err, req, res, next) {
     console.log(err);
 
     if (err.status === 404)
-        res.status(404).json({ message: "No encontrado" });
+        res.status(404).json({ message: "Not found... Maybe CAPS? ;) " });
     else
         res.status(500).json({ message: "Oops, seem a fail by our side. Sorry for the inconveniences :( " });
 });
