@@ -1,4 +1,4 @@
-const trackModel = require('../models/track');
+const trackModel = require('../models/tracks');
 module.exports = {
     getById: function (req, res, next) {
         console.log(req.body);

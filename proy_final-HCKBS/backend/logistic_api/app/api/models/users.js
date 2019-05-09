@@ -9,17 +9,17 @@ const UserSchema = new Schema({
   type: String,
   trim: true,  
   required: true,
-    },
+  },
  email: {
   type: String,
   trim: true,
   required: true
-    },
+  },
  password: {
   type: String,
   trim: true,
   required: true
-    }
+  }
 });
 // hash user password before saving into database, so Jose can´t say I don´t protect the users :)
 UserSchema.pre('save', function(next){
