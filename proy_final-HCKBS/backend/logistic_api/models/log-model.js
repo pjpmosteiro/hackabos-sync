@@ -3,7 +3,7 @@
 const mongoose = require('mongoose');
 
 const {
-  Schema
+  Schema,
 } = mongoose;
 
 const postSchema = new Schema({
@@ -13,11 +13,10 @@ const postSchema = new Schema({
   user: Number,
   status: {
     type: String,
-    default: 'Registrado'
+    default: 'Registrado',
   },
 });
 
-const Post = mongoose.model('Post', postSchema);
+const Log = mongoose.model('Post', postSchema);
 
 module.exports = Log;
-

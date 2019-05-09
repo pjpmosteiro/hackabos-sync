@@ -12,6 +12,7 @@ async function validate(payload) {
   return Joi.validate(payload, schema);
 }
 
+// eslint-disable-next-line no-unused-vars
 async function createTrack(req, res, next) {
   const {
     claims,

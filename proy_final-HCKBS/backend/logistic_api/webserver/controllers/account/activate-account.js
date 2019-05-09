@@ -2,6 +2,7 @@
 
 const mysqlPool = require('../../../databases/mysql-pool');
 
+// eslint-disable-next-line no-unused-vars
 async function activate(req, res, next) {
   const { verification_code: verificationCode } = req.query;
 

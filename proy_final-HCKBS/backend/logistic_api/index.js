@@ -14,8 +14,10 @@ const mongoPool = require('./databases/mongo-pool');
     await mysqlPool.connect();
     await mongoPool.connect();
     await webServer.listen(httpServerConfig.port);
+    // eslint-disable-next-line no-console
     console.log(`server running at: ${httpServerConfig.port}`);
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.error(e);
     process.exit(1);
   }

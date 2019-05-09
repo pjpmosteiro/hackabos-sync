@@ -6,6 +6,6 @@ const createTrack = require('../controllers/post/create-track');
 
 const router = express.Router();
 
-router.post('/post', checkJwtToken, createTrack);
+router.post('/new', checkJwtToken, createTrack);
 
 module.exports = router;
