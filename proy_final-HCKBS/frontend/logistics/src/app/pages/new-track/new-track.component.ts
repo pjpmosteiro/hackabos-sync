@@ -26,7 +26,7 @@ export class NewTrackComponent implements OnInit {
 
     this.http.post(`${environment.apiBaseUrl}/lg01s/`, this.new_tracking.value)
       .subscribe(
-        successCallback => alert("Envio generado correctamente. Consulte el número de seguimiento en la sección 'Mis Envios' "),
+        successCallback => alert("Envio generado correctamente. En breve recibirá el número de seguimiento en su e-mail."),
         errorCallback => alert('Se ha producido un error. Por favor, inténtelo de nuevo más tarde')
       )
   }

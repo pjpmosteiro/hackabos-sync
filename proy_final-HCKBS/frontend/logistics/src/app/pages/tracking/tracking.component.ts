@@ -28,7 +28,7 @@ export class TrackingComponent {
     this.http.get(`${environment.apiBaseUrl}/lg01s/${this.tracking.value['track_number']}`)
       .subscribe(
         data => this.datos = data,
-        errorCallback => alert('Se ha producido un error. Por favor, inténtelo de nuevo más tarde')
+        errorCallback => alert('Envío no encontrado. Por favor, compruebe el número e inténtelo de nuevo.')
       );
   };
 }
