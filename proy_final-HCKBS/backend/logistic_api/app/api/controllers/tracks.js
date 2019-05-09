@@ -11,7 +11,7 @@ module.exports = {
         });
     },
     //ToDo: Implementar listado de envios en frontend!!!! NOTION 0104
-    //List tracks (NO FRONT)
+    //Listar tracks (NO FRONT)
     getAll: function (req, res, next) {
         let trackList = [];
         trackModel.find({}, function (err, tracks) {
@@ -26,7 +26,7 @@ module.exports = {
             }
         });
     },
-    //Update track list (FRONT)
+    //Actualizar datos de envio (FRONT)
     updateById: function (req, res, next) {
         trackModel.findByIdAndUpdate(req.params.trackId, { name: req.body.name }, function (err, trackInfo) {
             if (err)
@@ -36,7 +36,7 @@ module.exports = {
             }
         });
     },
-    //Delete track (NO FRONT)
+    //borrar track (NO FRONT)
     deleteById: function (req, res, next) {
         trackModel.findByIdAndRemove(req.params.trackId, function (err, trackInfo) {
             if (err)
@@ -46,7 +46,7 @@ module.exports = {
             }
         });
     },
-    //Create new track (FRONT) -- Note: Default value for status is "Registrado"
+    //Crear envío (FRONT) -- NOTA (cuidado con el modelo): valor por defecto "Registrado". Aceptar si user envia estado (no permitir en front)
     create: function (req, res, next) {
         movieModel.create({ dest: req.body.dest, remit: req.body.remit, status: "Registrado" }, function (err, result) {
             if (err)

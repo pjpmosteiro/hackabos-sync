@@ -19,7 +19,7 @@ module.exports = {
             if (err) {
                 next(err);
             } else {
-                //VERIFICATION OF JWT AUTH ON REQUEST
+                //Verificacion de datos, si ok, se envian datos + token, si no, error.
                 if (bcrypt.compareSync(req.body.password, userInfo.password)) {
                     const token = jwt.sign({ id: userInfo._id }, req.app.get('secretKey'), { expiresIn: '1h' });
                     res.json({ status: "success", message: "OK, user found!", data: { user: userInfo, token: token } });

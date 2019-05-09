@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//Define a schema
+//Generar esqueña
 const Schema = mongoose.Schema;
 const TrackSchema = new Schema({
     dest: {
@@ -12,7 +12,7 @@ const TrackSchema = new Schema({
         trim: true,
         required: true,
     },
-    // NO REQ-- VALUE ON DEFAULT APPLIED
+    // NO REQ-- Valor por defecto aplicado
     dest: {
         type: String,
         trim: true,

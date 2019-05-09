@@ -1,4 +1,4 @@
-//Set up mongoose connection
+//Conexión a Mongo --  Acceso restringido por IP :)
 const mongoose = require('mongoose');
 const mongoDB = 'mongodb+srv://lex:Mosteiro1@cluster0-3qi3i.gcp.mongodb.net/logistic';
 mongoose.connect(mongoDB);

@@ -3,10 +3,11 @@ const logger = require('morgan');
 const tracks = require('./app/routes/tracks');
 const users = require('./app/routes/users');
 const bodyParser = require('body-parser');
-const mongoose = require('./app/config/database'); //database config
+const mongoose = require('./app/config/database');
 var jwt = require('jsonwebtoken');
 const app = express();
-app.set('secretKey', 'nodeRestApi'); // jwt
+//Configuracion de seguridad de jwt
+app.set('secretKey', 'nodeRestApi');
 
 // Conexion a Mongo
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
@@ -18,32 +19,35 @@ app.get('/', function (req, res) {
     res.json({ "Logistics API V1.0.2 SRV1 ||": " Sistema OK, I/O OK || api.logistics.redp.icu / backend.int.redp.icu" });
 });
 
-// public route
+// Router publico para login
 app.use('/users', users);
-// private route
+// Router privado de acceso restringido
 app.use('/tracks', validateUser, tracks);
+//Evitamos que pidan favicon
 app.get('/favicon.ico', function (req, res) {
     res.sendStatus(204);
 });
+
+//Validador de usuarios
 function validateUser(req, res, next) {
     jwt.verify(req.headers['Authorization'], req.app.get('secretKey'), function (err, decoded) {
         if (err) {
             res.json({ status: "error", message: "Auth required, please, try again", data: null });
         } else {
-            // add us id to request
+            //Añadir id de usuario ¡
             req.body.userId = decoded.id;
             next();
         }
     });
 
 }
-// catch and handle 404 error
+//Pescamos y manejamos 404, express no sabe.
 app.use(function (req, res, next) {
     let err = new Error('Not Found');
     err.status = 404;
     next(err);
 });
-// handle errors
+// Control de errores
 app.use(function (err, req, res, next) {
     console.log(err);
 
@@ -52,6 +56,9 @@ app.use(function (err, req, res, next) {
     else
         res.status(500).json({ message: "Oops, seem a fail by our side. Sorry for the inconveniences :( ---- 500 ERROR" });
 });
+
+
+//Si se llega hasta aqui, todo OK, node esta cargado :)
 app.listen(3000, function () {
     console.log('>>>>>>>>>>>>>>>>>>>>>>>> Node armado (y peligroso) en el puerto 3000');
 });
