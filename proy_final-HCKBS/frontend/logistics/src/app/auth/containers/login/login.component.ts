@@ -21,7 +21,7 @@ export class LoginComponent {
 
   login() {
     if (this.loginForm.valid) {
-      alert()
+
       this.store.dispatch(new Login(this.loginForm.value));
     }
   }
