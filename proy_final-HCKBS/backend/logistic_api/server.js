@@ -7,7 +7,7 @@ const mongoose = require('./app/config/database');
 var jwt = require('jsonwebtoken');
 const app = express();
 //Configuracion de seguridad de jwt
-app.set('secretKey', 'nodeRestApi');
+app.set('ulkit6i64jr76r7i7rj', 'nodeRestApi');
 
 // Conexion a Mongo
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
