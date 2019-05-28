@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const express = require('express');
 const logger = require('morgan');
 const tracks = require('./app/routes/tracks');
