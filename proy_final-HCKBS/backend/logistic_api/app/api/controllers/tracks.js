@@ -6,7 +6,7 @@ module.exports = {
             if (err) {
                 next(err);
             } else {
-                res.json({ status: "success", message: "Track found!", data: { movies: trackInfo } });
+                res.json({ status: "success", message: "Track found!", data: { tracks: trackInfo } });
             }
         });
     },
@@ -21,7 +21,7 @@ module.exports = {
                 for (let track of tracks) {
                     tracksList.push({ id: track._id, dest: track.dest, remit: track.remit, status: track.status });
                 }
-                res.json({ status: "success", message: "OK, track list fount!", data: { trakcs: trackList } });
+                res.json({ status: "success", message: "OK, track list fount!", data: { tracks: trackList } });
 
             }
         });
@@ -48,7 +48,7 @@ module.exports = {
     },
     //Crear envío (FRONT) -- NOTA (cuidado con el modelo): valor por defecto "Registrado". Aceptar si user envia estado (no permitir en front)
     create: function (req, res, next) {
-        movieModel.create({ dest: req.body.dest, remit: req.body.remit, status: "Registrado" }, function (err, result) {
+        trackModel.create({ dest: req.body.dest, remit: req.body.remit, status: "Registrado" }, function (err, result) {
             if (err)
                 next(err);
             else

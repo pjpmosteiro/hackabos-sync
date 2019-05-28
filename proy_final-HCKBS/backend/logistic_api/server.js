@@ -32,7 +32,8 @@ app.get('/favicon.ico', function (req, res) {
 function validateUser(req, res, next) {
     jwt.verify(req.headers['Authorization'], req.app.get('secretKey'), function (err, decoded) {
         if (err) {
-            res.json({ status: "error", message: "Auth required, please, try again", data: null });
+            res.sendStatus(403),
+                console.log(err);
         } else {
             //Añadir id de usuario ¡
             req.body.userId = decoded.id;
@@ -60,5 +61,5 @@ app.use(function (err, req, res, next) {
 
 //Si se llega hasta aqui, todo OK, node esta cargado :)
 app.listen(3000, function () {
-    console.log('>>>>>>>>>>>>>>>>>>>>>>>> Node armado (y peligroso) en el puerto 3000');
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>> Node armado (y peligroso) en el puerto 3000<<<<<<<<<<<<<<<<<<<<<<<<');
 });
